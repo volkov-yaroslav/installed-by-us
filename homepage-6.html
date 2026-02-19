@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Installed By Us - RV & Off-Grid Solar</title>
+    <link rel="icon" href="images/by-us-icon.jpg" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta content="Custom RV and off-grid solar systems in San Antonio and Texas Hill Country." name="description" >
+    <meta content="" name="keywords" >
+    <meta content="" name="author" >
+    <!-- CSS Files
+    ================================================== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="css/style.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="css/colors/scheme-1.css" rel="stylesheet" type="text/css" >
+    <style>
+        .ib-header {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
+            background: transparent;
+        }
+        .ib-header .ib-topbar {
+            border-bottom: 1px solid rgba(255, 255, 255, .18);
+            padding: 4px 0;
+            max-height: 48px;
+            overflow: hidden;
+            opacity: 1;
+            -webkit-transition: max-height .34s cubic-bezier(.22,.61,.36,1), opacity .24s ease, padding .24s ease, border-color .24s ease;
+            transition: max-height .34s cubic-bezier(.22,.61,.36,1), opacity .24s ease, padding .24s ease, border-color .24s ease;
+        }
+        .ib-topbar-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .ib-topbar-row a {
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+        .ib-topbar-row .topbar-widget > span {
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+        .ib-header .ib-mainbar {
+            padding: 14px 0;
+        }
+        .ib-main-row {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: nowrap;
+        }
+        .ib-brand {
+            flex: 0 0 auto;
+        }
+        .ib-brand img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+        }
+        .ib-nav {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+        .ib-nav #mainmenu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        .ib-actions {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .ib-header #menu-btn {
+            display: none !important;
+        }
+        .ib-header #btn-extra {
+            display: inline-block;
+            width: 30px;
+            height: 18px;
+            margin-left: 0;
+        }
+        .ib-header #btn-extra span {
+            border-bottom: solid 2px #ffffff;
+        }
+        .ib-header.smaller {
+            position: fixed;
+            background: rgba(15, 38, 71, .92);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        .ib-header.smaller .ib-topbar {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-bottom-color: transparent;
+            pointer-events: none;
+        }
+        .ib-header.autoshow {
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+        .ib-header.autoshow.scrollOff {
+            top: 0 !important;
+            transform: translateY(calc(-100% - 12px)) !important;
+            -webkit-transform: translateY(calc(-100% - 12px)) !important;
+            opacity: 0;
+            pointer-events: none;
+            -webkit-transition: -webkit-transform .42s cubic-bezier(.22,.61,.36,1), opacity .28s ease;
+            transition: transform .42s cubic-bezier(.22,.61,.36,1), opacity .28s ease;
+        }
+        .ib-header.autoshow.scrollOn {
+            top: 0 !important;
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+            -webkit-transition: -webkit-transform .42s cubic-bezier(.22,.61,.36,1), opacity .28s ease;
+            transition: transform .42s cubic-bezier(.22,.61,.36,1), opacity .28s ease;
+        }
+        .ib-intake-card {
+            background: #f4f4f4;
+            border-radius: 10px;
+            padding: 32px;
+        }
+        .ib-intake-card .form-control,
+        .ib-intake-card .form-select {
+            height: 50px;
+            border-radius: 8px;
+            border: solid 1px #d8d8d8;
+            background: #ffffff;
+            color: #0f2647 !important;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.25 !important;
+            padding: 0 16px !important;
+            margin-bottom: 0 !important;
+        }
+        .ib-intake-card .form-select {
+            padding-right: 42px !important;
+            background-position: right .85rem center;
+        }
+        .ib-intake-card .form-control::placeholder {
+            color: #6f7782 !important;
+        }
+        .ib-intake-card .ib-form-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f2647;
+            margin: 10px 0 14px;
+        }
+        .ib-intake-card .ib-form-heading {
+            font-size: 38px;
+            font-weight: 700;
+            color: #0f2647;
+            text-align: center;
+            margin: 0 0 18px;
+            line-height: 1.2;
+        }
+        .ib-intake-card .form-label,
+        .ib-intake-card .form-check-label {
+            color: #0f2647 !important;
+            font-weight: 600;
+        }
+        .ib-intake-card .ib-req {
+            color: #c62828;
+        }
+        .ib-intake-card .form-check-label {
+            font-size: 15px;
+            line-height: 1.45;
+        }
+        .ib-confirm-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding-left: 0;
+        }
+        .ib-confirm-check .form-check-input {
+            position: static;
+            margin: 2px 0 0 0;
+            flex: 0 0 auto;
+        }
+        .ib-confirm-check .form-check-label {
+            margin: 0;
+        }
+        .ib-intake-card .form-control:focus,
+        .ib-intake-card .form-select:focus {
+            border-color: #edbf00;
+            box-shadow: 0 0 0 3px rgba(237, 191, 0, .2);
+        }
+        .ib-project-choice {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+        .ib-project-radio {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .ib-project-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid 1px #cfd5de;
+            background: #ffffff;
+            border-radius: 10px;
+            height: 52px;
+            padding: 0 14px;
+            text-align: center;
+            line-height: 1.2;
+            color: #0f2647;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .22s ease;
+        }
+        .ib-project-label:hover {
+            border-color: #edbf00;
+            background: #fff7d6;
+            transform: translateY(-1px);
+        }
+        .ib-project-radio:checked + .ib-project-label {
+            border-color: #edbf00;
+            background: #edbf00;
+            color: #0f2647;
+            box-shadow: none;
+            transform: none;
+        }
+        .ib-phone-wrap {
+            display: flex;
+            align-items: center;
+            border: solid 1px #d8d8d8;
+            border-radius: 8px;
+            background: #ffffff;
+            height: 50px;
+            overflow: hidden;
+        }
+        .ib-phone-prefix {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 12px;
+            border-right: solid 1px #e1e4ea;
+            color: #0f2647;
+            font-weight: 700;
+            white-space: nowrap;
+            height: 100%;
+        }
+        .ib-phone-wrap .form-control {
+            border: 0;
+            height: 100% !important;
+            line-height: 1.25 !important;
+            padding: 0 16px !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        .ib-phone-wrap:focus-within {
+            border-color: #edbf00;
+            box-shadow: 0 0 0 3px rgba(237, 191, 0, .2);
+        }
+        .ib-invalid-msg {
+            font-size: 13px;
+            color: #b3261e;
+            margin-top: 6px;
+            display: none;
+        }
+        .ib-invalid-msg.show {
+            display: block;
+        }
+        .ib-prefooter .ib-prefooter-track .d-flex {
+            align-items: center !important;
+        }
+        .ib-prefooter {
+            padding-top: 2.5rem !important;
+            padding-bottom: 2.5rem !important;
+            display: flex;
+            align-items: center;
+        }
+        .ib-prefooter .container {
+            width: 100%;
+        }
+        .ib-prefooter .ib-prefooter-track {
+            align-items: center !important;
+            --bs-gutter-y: 0;
+            margin-top: 0 !important;
+        }
+        .ib-prefooter .ib-prefooter-track > [class*="col-"] {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0 !important;
+            padding-top: 0 !important;
+        }
+        .ib-prefooter .ib-prefooter-track > [class*="col-"] > .d-flex {
+            width: 100%;
+            margin: 0 !important;
+        }
+        .ib-prefooter .ib-prefooter-track .d-flex > i {
+            display: block;
+            line-height: 1 !important;
+            margin: 0 !important;
+            align-self: center;
+        }
+        .ib-prefooter .ib-prefooter-track .d-flex .ms-3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .ib-prefooter .ib-prefooter-track h4,
+        .ib-prefooter .ib-prefooter-track p {
+            margin: 0 !important;
+        }
+        .ib-fit-dots {
+            display: none;
+        }
+
+        @media only screen and (max-width: 1280px) {
+            .ib-actions .btn-main {
+                display: none;
+            }
+            .ib-brand img {
+                max-width: 270px;
+            }
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .ib-header,
+            .ib-header.fixed,
+            .ib-header.header-mobile,
+            .ib-header.header-mobile.header-light,
+            .ib-header.header-mobile.header-dark,
+            .ib-header.header-mobile.smaller {
+                background: transparent !important;
+                -webkit-backdrop-filter: none !important;
+                backdrop-filter: none !important;
+                margin-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            .ib-header.smaller,
+            .ib-header.smaller.scroll-light,
+            .ib-header.nav-up {
+                background: rgba(15, 38, 71, .92) !important;
+                -webkit-backdrop-filter: blur(10px) !important;
+                backdrop-filter: blur(10px) !important;
+            }
+            .ib-header.header-mobile {
+                overflow: visible !important;
+            }
+            .ib-header .ib-topbar {
+                display: none !important;
+            }
+            .ib-header .ib-mainbar {
+                padding: 10px 0 !important;
+            }
+            .ib-brand img {
+                width: min(220px, 60vw);
+                max-width: min(220px, 60vw);
+                min-width: 150px;
+            }
+            .ib-nav,
+            .ib-header #mainmenu {
+                display: none !important;
+            }
+            .ib-actions {
+                margin-left: auto;
+            }
+            .ib-header #btn-extra {
+                width: 30px !important;
+                height: 18px !important;
+            }
+            #content {
+                margin-top: 0 !important;
+            }
+
+            .ib-hero {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+            .ib-hero .ib-hero-content {
+                position: relative !important;
+                bottom: auto !important;
+                padding: 120px 0 40px;
+            }
+            .ib-hero .ib-hero-content .text-start {
+                text-align: center !important;
+            }
+            .ib-hero .ib-hero-content .d-flex {
+                justify-content: center;
+            }
+            .ib-hero .ib-hero-content .btn-main.me-4 {
+                margin-right: 0 !important;
+            }
+            .ib-intake-card {
+                padding: 26px;
+            }
+            .ib-intake-card .ib-form-heading {
+                font-size: 32px;
+            }
+            .ib-project-choice {
+                gap: 10px;
+            }
+            .ib-intake-card .form-label,
+            .ib-intake-card .form-check-label {
+                font-size: 15px;
+            }
+            .ib-fit-section .p-30.relative.bg-light.rounded-1.mx-4.mt-min-100 {
+                margin-top: -100px !important;
+                padding: 30px !important;
+            }
+            .ib-fit-section .circle.bg-color.w-60px.h-60px {
+                position: absolute !important;
+                top: 0 !important;
+                right: 0 !important;
+                margin-top: -30px !important;
+                margin-right: 1.5rem !important;
+                margin-bottom: 0 !important;
+            }
+        }
+        @media only screen and (max-width: 767px) {
+            .ib-intake-card {
+                padding: 20px 16px;
+            }
+            .ib-intake-card .ib-form-heading {
+                font-size: 28px;
+                margin-bottom: 14px;
+            }
+            .ib-project-choice {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .ib-project-label {
+                height: 50px;
+            }
+            .ib-intake-card .form-control,
+            .ib-intake-card .form-select,
+            .ib-phone-wrap {
+                height: 48px;
+            }
+            .ib-phone-prefix {
+                padding: 0 10px;
+                gap: 5px;
+            }
+            .ib-intake-card .btn-main {
+                width: 100%;
+                justify-content: center;
+            }
+            .ib-intake-card .btn-main span {
+                width: 100%;
+                text-align: center;
+            }
+            #project-form .spacer-double {
+                height: 34px;
+            }
+        }
+        @media only screen and (max-width: 1199px) {
+            .ib-hero .ib-hero-content h1 {
+                font-size: clamp(48px, 8vw, 84px) !important;
+            }
+            .ib-hero .ib-hero-content .fs-20 {
+                font-size: 18px !important;
+            }
+            .de-marquee-list-2 img {
+                height: 36px !important;
+            }
+        }
+        @media only screen and (max-width: 991px) {
+            .ib-hero .ib-hero-content {
+                padding: 130px 0 54px;
+            }
+            .ib-svc-secondary {
+                display: none !important;
+            }
+            .ib-svc-media-col > .relative > .relative.overflow-hidden.z-2 {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-bottom: 0 !important;
+                border-radius: var(--rounded-1) !important;
+                overflow: hidden !important;
+            }
+            .ib-svc-media-col > .relative > .relative.overflow-hidden.z-2 img {
+                width: 100% !important;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+            .ib-hero .ib-hero-content h1 {
+                font-size: clamp(42px, 9.5vw, 66px) !important;
+                margin-bottom: 18px !important;
+            }
+            .ib-hero .ib-hero-content .fs-20 {
+                font-size: 17px !important;
+                margin-bottom: 18px !important;
+            }
+            .ib-hero .ib-hero-content .btn-main {
+                min-width: 260px;
+                justify-content: center;
+            }
+            #content section.border-top .relative .w-60 {
+                width: 72% !important;
+            }
+            #content .ib-svc-media-col > .relative > .relative.w-60 {
+                width: 100% !important;
+            }
+            #content .ib-svc-media-col .ib-svc-main-image {
+                width: 100% !important;
+                max-width: 100% !important;
+                aspect-ratio: 16 / 10;
+            }
+            #content section.border-top .relative .top-0.end-0 {
+                top: auto !important;
+                bottom: 0 !important;
+            }
+            #content section.border-top .relative .mb-5 {
+                margin-bottom: 1rem !important;
+            }
+            #content section .p-30.relative.bg-light.rounded-1.mx-4.mt-min-100 {
+                margin-left: 12px !important;
+                margin-right: 12px !important;
+            }
+            #content section .circle.bg-color.w-60px.h-60px {
+                width: 52px !important;
+                height: 52px !important;
+            }
+            #content .de-step h4 {
+                font-size: 17px;
+                line-height: 1.35;
+            }
+            #content .de-step p {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+            #content .grid-divider > [class*="col-"] .d-flex {
+                justify-content: center !important;
+            }
+            .ib-fit-dots {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                margin-top: 14px;
+            }
+            .ib-fit-dots button {
+                width: 8px;
+                height: 8px;
+                border: 0;
+                border-radius: 999px;
+                background: rgba(15, 38, 71, .35);
+                padding: 0;
+                transition: all .2s ease;
+            }
+            .ib-fit-dots button.active {
+                width: 18px;
+                background: #edbf00;
+            }
+            .ib-prefooter .grid-divider > [class*="col-"]::after {
+                display: none !important;
+            }
+            .ib-prefooter .ib-prefooter-track {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                align-items: stretch;
+                gap: 8px;
+                width: 100%;
+                overflow: visible;
+                padding: 0;
+            }
+            .ib-prefooter .ib-prefooter-track > [class*="col-"] {
+                flex: 1 1 0 !important;
+                width: auto;
+                min-width: 0;
+                max-width: none;
+                margin-bottom: 0 !important;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex {
+                min-height: 100%;
+                padding: 6px 10px;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
+                gap: 8px;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex > i {
+                display: block;
+                line-height: 1 !important;
+                align-self: center;
+                margin: 0 !important;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex .ms-3 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                text-align: left;
+                margin-left: 0 !important;
+            }
+            #content .ib-prefooter .ib-prefooter-track .d-flex i.fs-60 {
+                font-size: 28px !important;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex h4 {
+                font-size: 17px;
+                line-height: 1.2;
+                margin: 0;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex p {
+                font-size: 14px;
+                line-height: 1.35;
+                margin: 0;
+            }
+            .ib-fit-section .ib-fit-slider {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 16px;
+                margin-left: 0 !important;
+                margin-right: calc(50% - 50vw);
+                padding: 0 20px 8px 0;
+                padding-bottom: 8px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                --bs-gutter-x: 0;
+            }
+            .ib-fit-section .ib-fit-slider::-webkit-scrollbar {
+                height: 6px;
+            }
+            .ib-fit-section .ib-fit-slider > [class*="col-"] {
+                flex: 0 0 min(80vw, 360px);
+                max-width: none;
+                scroll-snap-align: start;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .ib-fit-section .ib-fit-card-wrap {
+                overflow: visible !important;
+            }
+            .ib-fit-section .ib-fit-image {
+                border-radius: var(--rounded-1) !important;
+                overflow: hidden !important;
+            }
+            #content section.ib-fit-section .ib-fit-content {
+                margin: -100px 16px 0 !important;
+                padding: 30px !important;
+                position: relative;
+                z-index: 2;
+            }
+        }
+        @media only screen and (max-width: 767px) {
+            .ib-hero .ib-hero-content {
+                padding: 120px 0 44px;
+            }
+            .ib-hero .ib-hero-content h1 {
+                font-size: clamp(34px, 10.5vw, 52px) !important;
+                line-height: 1.05 !important;
+                margin-bottom: 14px !important;
+            }
+            .ib-hero .ib-hero-content p {
+                font-size: 16px !important;
+                line-height: 1.45 !important;
+            }
+            .ib-hero .ib-hero-content .btn-main {
+                min-width: 0;
+                width: 100%;
+                max-width: 320px;
+            }
+            #content section .d-inline-block.rounded-pill {
+                font-size: 13px !important;
+                line-height: 1.2;
+                padding: 8px 14px !important;
+            }
+            #content section h2 {
+                font-size: clamp(28px, 8vw, 36px);
+                line-height: 1.2;
+            }
+            #content section.border-top .relative .w-60,
+            #content section.border-top .relative .w-90,
+            #content section.border-top .relative .w-50 {
+                width: 100% !important;
+            }
+            #content section.border-top .relative .abs {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                margin-top: 12px !important;
+            }
+            #content section.border-top .relative .mt-5 {
+                margin-top: 0 !important;
+            }
+            .ib-svc-media-col > .relative > .relative.overflow-hidden.z-2 img {
+                height: 100%;
+            }
+            #content section.border-top .relative .mb-min-50 {
+                margin-bottom: 0 !important;
+            }
+            #content section .p-30.relative.bg-light.rounded-1.mx-4.mt-min-100 {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                margin-top: 14px !important;
+                padding: 22px !important;
+            }
+            #content section .circle.bg-color.w-60px.h-60px {
+                position: static !important;
+                margin: 0 0 12px auto !important;
+            }
+            .ib-fit-section .ib-fit-slider > [class*="col-"] {
+                flex-basis: min(86vw, 340px);
+            }
+            #content section.ib-fit-section .ib-fit-content {
+                margin: -100px 16px 0 !important;
+                padding: 30px !important;
+            }
+            #content section.ib-fit-section .ib-fit-icon {
+                position: absolute !important;
+                top: 0 !important;
+                right: 0 !important;
+                margin-top: -30px !important;
+                margin-right: 1.5rem !important;
+                margin-left: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            #content section.ib-fit-section .ib-fit-icon {
+                display: none !important;
+            }
+            #content .de-step {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            #content .de-step h4 {
+                font-size: 16px;
+            }
+            #content .de-step p {
+                font-size: 14px;
+            }
+            .de-marquee-list-2 img {
+                height: 30px !important;
+            }
+            #content .grid-divider > [class*="col-"] .d-flex {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 8px;
+            }
+            #content .grid-divider > [class*="col-"] .d-flex .ms-3 {
+                margin-left: 0 !important;
+            }
+            #content .grid-divider > [class*="col-"] i.fs-60 {
+                font-size: 42px !important;
+            }
+            .ib-prefooter .ib-prefooter-track {
+                gap: 6px;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex {
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                padding: 4px 6px;
+                gap: 6px;
+            }
+            .ib-prefooter .ib-prefooter-track > [class*="col-"] .ms-3 {
+                margin-left: 0 !important;
+            }
+            #content .ib-prefooter .ib-prefooter-track .d-flex i.fs-60 {
+                font-size: 22px !important;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex h4 {
+                font-size: 14px;
+                line-height: 1.15;
+                margin: 0;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex p {
+                font-size: 12px;
+                line-height: 1.25;
+                margin: 0;
+            }
+            .ib-prefooter .ib-prefooter-track > [class*="col-"]:last-child {
+                display: none !important;
+            }
+        }
+        @media only screen and (max-width: 575px) {
+            .ib-header .ib-mainbar {
+                padding: 8px 0 !important;
+            }
+            .ib-brand img {
+                width: min(200px, 58vw);
+                max-width: min(200px, 58vw);
+                min-width: 125px;
+            }
+            .ib-hero .ib-hero-content {
+                padding: 112px 0 38px;
+            }
+            #content section h2 {
+                font-size: 30px;
+            }
+            #content section p,
+            #content section li {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+            #content section[aria-label="section"].p-0 .popup-youtube .relative {
+                min-height: 320px;
+            }
+            #content section[aria-label="section"].p-0 .popup-youtube img {
+                height: 320px;
+                object-fit: cover;
+                object-position: center;
+            }
+            #content section[aria-label="section"].p-0 .popup-youtube .absolute.start-0 {
+                font-size: 26px !important;
+            }
+            #content section[aria-label="section"].p-0 .popup-youtube .player.circle {
+                transform: scale(.82);
+            }
+        }
+        @media only screen and (min-width: 576px) and (max-width: 767px) {
+            .ib-prefooter .ib-prefooter-track .d-flex {
+                gap: 8px;
+                padding: 6px 8px;
+            }
+            #content .ib-prefooter .ib-prefooter-track .d-flex i.fs-60 {
+                font-size: 26px !important;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex h4 {
+                font-size: 16px;
+                line-height: 1.2;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex p {
+                font-size: 14px;
+                line-height: 1.35;
+            }
+        }
+        @media only screen and (max-width: 330px) {
+            .ib-prefooter .ib-prefooter-track {
+                flex-wrap: wrap !important;
+                justify-content: center;
+                gap: 10px;
+            }
+            .ib-prefooter .ib-prefooter-track > [class*="col-"] {
+                flex: 0 0 100% !important;
+                width: 100%;
+            }
+            .ib-prefooter .ib-prefooter-track .d-flex {
+                justify-content: center !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+
+        <!-- preloader begin -->
+        <div id="de-loader"></div>
+        <!-- preloader end -->
+
+        <!-- header begin -->
+        <header class="ib-header transparent">
+            <div class="ib-topbar">
+                <div class="container">
+                    <div class="ib-topbar-row">
+                        <div class="topbar-widget"><span><i class="icofont-location-pin"></i>San Antonio, TX</span></div>
+                        <div class="topbar-widget"><a href="tel:+12392410953"><i class="icofont-phone"></i>(239) 241-0953</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ib-mainbar">
+                <div class="container">
+                    <div class="ib-main-row">
+                        <div class="ib-brand" id="logo">
+                            <a href="#top">
+                                <img class="logo-main" src="images/installedbyus-logo-light.png" alt="">
+                                <img class="logo-mobile" src="images/installedbyus-logo-light.png" alt="">
+                            </a>
+                        </div>
+
+                        <nav class="ib-nav">
+                            <ul id="mainmenu">
+                                <li><a class="menu-item" href="#rv-solar">RV Solar</a></li>
+                                <li><a class="menu-item" href="#offgrid-cabin">Off-Grid Cabin</a></li>
+                                <li><a class="menu-item" href="#how-we-move-forward">How It Works</a></li>
+                                <li><a class="menu-item" href="#project-form">Contact</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="ib-actions">
+                            <a href="#project-form" class="btn-main btn-secondary-fixed fx-slide"><span>Get a Quote</span></a>
+                            <div id="btn-extra" aria-label="Open Menu" role="button" tabindex="0">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+
+            <div id="top"></div>
+
+            <section class="section-dark no-top no-bottom text-light jarallax relative v-center ib-hero" data-video-src="mp4:video/1.mp4" style="background-color:#0f2647 !important;">
+                <div class="gradient-edge-top"></div>
+                <div class="gradient-edge-bottom h-50"></div>
+                <div class="sw-overlay op-6"></div>
+                <div class="abs w-80 bottom-10 z-2 w-100 ib-hero-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-11">
+                                <div class="text-start">
+                                    <p class="wow fadeInUp">Professional solar design and installation in <span style="font-weight:700; color:#edbf00;">San Antonio &amp; Texas Hill Country</span></p>
+                                    <h1 class="fs-120 text-uppercase fs-sm-10vw mb-4 lh-1 wow fadeInUp" data-wow-delay=".2s">Custom RV &amp; Off&#8209;Grid Solar Systems</h1>
+                                    <p class="wow fadeInUp fs-20 fw-700 mb-4" data-wow-delay=".4s">Most RV projects begin around $10,000, while off&#8209;grid cabin systems typically begin around $15,000.</p>
+
+                                    <div class="d-flex align-items-center wow fadeInUp" data-wow-delay=".5s">
+                                        <a class="btn-main btn-primary-fixed fx-slide me-4" href="#project-form"><span>Schedule a Project Call</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="border-top" id="rv-solar">
+                <div class="container">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="col-lg-6 order-lg-1 ib-svc-media-col">
+                            <div class="relative">
+                                <div class="relative overflow-hidden z-2 rounded-1 mb-4 ib-svc-main-image soft-shadow wow zoomIn"><img src="images/misc/s6.webp" class="w-100 wow scaleIn" data-wow-duration="1s" alt=""></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 order-lg-2 ib-svc-media-col">
+                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">RV Solar Systems</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Designed Around How You Actually Use Your Rig</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".3s">We build serious RV solar systems for real off-grid performance. Running A/C from solar requires larger battery banks, proper inverter sizing, and safe high-capacity wiring. There is no shortcut way to do this correctly.</p>
+
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-6">
+                                    <div class="bg-light rounded-1 p-3 h-100 wow fadeInUp" data-wow-delay=".4s">
+                                        <h5 class="mb-1">RV Without A/C</h5>
+                                        <p class="mb-0 fw-700">$10,000+ installed</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="bg-light rounded-1 p-3 h-100 wow fadeInUp" data-wow-delay=".5s">
+                                        <h5 class="mb-1">RV With A/C on Solar</h5>
+                                        <p class="mb-0 fw-700">$15,000+ installed</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="wow fadeInUp mt-3 mb-0" data-wow-delay=".6s">If you want reliable off-grid capability without running a generator all day, this is what it takes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="border-top" id="offgrid-cabin">
+                <div class="container">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="col-lg-6 order-lg-2 ib-svc-media-col">
+                            <div class="relative">
+                                <div class="relative overflow-hidden z-2 rounded-1 mb-4 ib-svc-main-image soft-shadow wow zoomIn"><img src="images/misc/s2.webp" class="w-100 wow scaleIn" data-wow-duration="1s" alt=""></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 order-lg-1">
+                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">Off&#8209;Grid Cabin Systems</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Custom Power for Cabin Life in the Hill Country</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".3s">For properties without utility access, we design systems around your real load requirements.</p>
+
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-6">
+                                    <div class="bg-light rounded-1 p-3 h-100 wow fadeInUp" data-wow-delay=".4s">
+                                        <h5 class="mb-1">Simple Cabin Needs</h5>
+                                        <p class="mb-0 fw-700">$15,000+</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="bg-light rounded-1 p-3 h-100 wow fadeInUp" data-wow-delay=".5s">
+                                        <h5 class="mb-1">Full Living Setup</h5>
+                                        <p class="mb-0 fw-700">$30,000-$40,000+</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="wow fadeInUp mt-3 mb-0" data-wow-delay=".6s">Large properties with multiple structures can exceed these ranges. Systems can sometimes be scaled down if power usage is managed intentionally.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-dark text-light" id="why-costs" style="background-color:#0f2647 !important;">
+                <div class="container relative z-1">
+                    <div class="row g-4 gx-5 align-items-center">
+
+                        <div class="col-lg-6">
+                            <div class="relative">
+                                <div class="rounded-1 w-90 overflow-hidden wow zoomIn">
+                                    <img src="images/misc/s4.webp" class="w-100 wow scaleIn" alt="">
+                                </div>
+                                <div class="rounded-1 w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden shadow-soft wow zoomIn" data-wow-delay=".2s">
+                                    <img src="images/misc/s1.webp" class="w-100 wow scaleIn" data-wow-delay=".2s" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">Why Costs Are Higher</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Correct Design and Safe Execution</h2>
+                            <ul class="ul-check wow fadeInUp" data-wow-delay=".3s">
+                                <li>Proper battery bank design</li>
+                                <li>Correct cable sizing and overcurrent protection</li>
+                                <li>Load balancing and inverter/charger integration</li>
+                                <li>Generator or shore power integration</li>
+                                <li>Safe lithium installation</li>
+                            </ul>
+                            <p class="wow fadeInUp mb-0" data-wow-delay=".4s">
+                                <i class="fa-solid fa-triangle-exclamation id-color me-2"></i>Improper installs can cause fire risk, equipment failure, battery damage, and insurance issues.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="spacer-double"></div>
+
+            </section>
+
+            <section class="ib-fit-section" id="who-we-fit">
+                <div class="container">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">Who We're a Fit For</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Built for Serious Buyers,<br>Not Budget Experiments</h2>
+                            <p class="lead mb-0 wow fadeInUp">If you're trying to build a $2,500 solar setup, we're not the right company.</p>
+                            <div class="spacer-single"></div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 ib-fit-slider">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="hover ib-fit-card">
+                                <div class="relative overflow-hidden ib-fit-card-wrap">
+                                    <div class="relative overflow-hidden rounded-1 ib-fit-image">
+                                        <img src="images/services/1.webp" class="w-100 hover-scale-1-2" alt="">
+                                    </div>
+                                    <div class="p-30 relative bg-light rounded-1 mx-4 mt-min-100 ib-fit-content">
+                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px d-flex align-items-center justify-content-center ib-fit-icon">
+                                            <i class="fa-solid fa-check" style="color:#0f2647;"></i>
+                                        </div>
+                                        <h4>Serious Investment Mindset</h4>
+                                        <p class="mb-0">You understand this is a major system investment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="hover ib-fit-card">
+                                <div class="relative overflow-hidden ib-fit-card-wrap">
+                                    <div class="relative overflow-hidden rounded-1 ib-fit-image">
+                                        <img src="images/services/2.webp" class="w-100 hover-scale-1-2" alt="">
+                                    </div>
+                                    <div class="p-30 relative bg-light rounded-1 mx-4 mt-min-100 ib-fit-content">
+                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px d-flex align-items-center justify-content-center ib-fit-icon">
+                                            <i class="fa-solid fa-check" style="color:#0f2647;"></i>
+                                        </div>
+                                        <h4>Do It Right the First Time</h4>
+                                        <p class="mb-0">You value safety, code-correct work, and long-term reliability.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="hover ib-fit-card">
+                                <div class="relative overflow-hidden ib-fit-card-wrap">
+                                    <div class="relative overflow-hidden rounded-1 ib-fit-image">
+                                        <img src="images/services/3.webp" class="w-100 hover-scale-1-2" alt="">
+                                    </div>
+                                    <div class="p-30 relative bg-light rounded-1 mx-4 mt-min-100 ib-fit-content">
+                                        <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px d-flex align-items-center justify-content-center ib-fit-icon">
+                                            <i class="fa-solid fa-check" style="color:#0f2647;"></i>
+                                        </div>
+                                        <h4>Ready to Move</h4>
+                                        <p class="mb-0">You're prepared to move forward within 1-3 months.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ib-fit-dots" aria-label="Slider indicators">
+                        <button type="button" class="active" aria-label="Slide 1"></button>
+                        <button type="button" aria-label="Slide 2"></button>
+                        <button type="button" aria-label="Slide 3"></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="border-top" id="how-we-move-forward">
+                <div class="container">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">How We Move Forward</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Simple. Direct. No Wasted Time.</h2>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 justify-content-center">
+                      <div class="col-6 col-md-3 de-step de-step-arrow">
+                        <div class="de-step-icon">
+                          <i class="fas fa-list-check fa-2x"></i>
+                        </div>
+                        <h4 class="fw-bold">Submit Project Details</h4>
+                        <p>You share your RV or property details, goals, and usage plans.</p>
+                      </div>
+                      <div class="col-6 col-md-3 de-step de-step-arrow">
+                        <div class="de-step-icon">
+                          <i class="fas fa-sack-dollar fa-2x"></i>
+                        </div>
+                        <h4 class="fw-bold">Scope & Budget Alignment</h4>
+                        <p>We review your scope, priorities, and confirm budget alignment.</p>
+                      </div>
+                      <div class="col-6 col-md-3 de-step de-step-arrow">
+                        <div class="de-step-icon">
+                          <i class="fas fa-van-shuttle fa-2x"></i>
+                        </div>
+                        <h4 class="fw-bold">Inspect RV/Property</h4>
+                        <p>If everything aligns, we inspect your rig or property on-site.</p>
+                      </div>
+                      <div class="col-6 col-md-3 de-step">
+                        <div class="de-step-icon">
+                          <i class="fas fa-solar-panel fa-2x"></i>
+                        </div>
+                        <h4 class="fw-bold">Design & Schedule Install</h4>
+                        <p>We finalize system design details and schedule your installation date.</p>
+                      </div>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-label="section" class="p-0">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <a class="d-block hover popup-youtube" href="https://www.youtube.com/embed/QhJ3dcLVLyY?autoplay=1&start=159">
+                                <div class="relative overflow-hidden">
+                                    <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
+                                        <div class="player circle wow scaleIn"><span></span></div>
+                                    </div>
+                                    <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
+                                    <img src="images/background/traveling-robert.webp" class="w-100 hover-scale-1-1" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="p-0" aria-label="section">
+                <div class="bg-color d-flex py-4 lh-1">
+                    <div class="de-marquee-list-2 wow fadeIn">
+                        <span class="fs-40 mx-4"><img src="images/brands/victron.webp" style="height:42px;width:auto;" alt=""></span>
+                        <span class="fs-40 mx-4"><img src="images/brands/eg4-logo.webp" style="height:42px;width:auto;" alt=""></span>
+                        <span class="fs-40 mx-4"><img src="images/brands/renogy.webp" style="height:42px;width:auto;" alt=""></span>
+                        <span class="fs-40 mx-4"><img src="images/brands/SOK.webp" style="height:42px;width:auto;" alt=""></span>
+                        <span class="fs-40 mx-4"><img src="images/brands/bluesun-logo.webp" style="height:42px;width:auto;" alt=""></span>
+                        <span class="fs-40 mx-4"><img src="images/brands/runergy-logo.webp" style="height:42px;width:auto;" alt=""></span>
+                        <span class="fs-40 mx-4"><img src="images/brands/victron.webp" style="height:42px;width:auto;" alt=""></span>
+                        <span class="fs-40 mx-4"><img src="images/brands/eg4-logo.webp" style="height:42px;width:auto;" alt=""></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-dark text-light" id="project-form" style="background-color:#0f2647 !important;">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-lg-9">
+                            <h2 class="wow fadeInUp" data-wow-delay=".1s">Serious About Going Off&#8209;Grid?</h2>
+                            <p class="lead wow fadeInUp" data-wow-delay=".2s">RV builds begin at $10,000. A/C capable RV builds begin at $15,000. Cabin systems begin at $15,000 and scale based on power needs.</p>
+                            <p class="wow fadeInUp" data-wow-delay=".3s">If that aligns with your expectations, schedule your consultation.</p>
+                            <a href="#project-intake-form" class="btn-main btn-primary-fixed fx-slide wow fadeInUp" data-wow-delay=".4s"><span>Request My Project Call</span></a>
+                        </div>
+                    </div>
+
+                    <div class="spacer-double"></div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <form id="project-intake-form" class="ib-intake-card" method="post" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID">
+                                <input type="hidden" name="_subject" id="project_subject" value="New Project Inquiry - Installed By Us">
+
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <div class="ib-form-heading">What project are you planning?</div>
+                                        <div class="ib-project-choice">
+                                            <div>
+                                                <input class="ib-project-radio" type="radio" id="project_type_rv" name="project_type" value="rv" required>
+                                                <label class="ib-project-label" for="project_type_rv">RV Solar System</label>
+                                            </div>
+                                            <div>
+                                                <input class="ib-project-radio" type="radio" id="project_type_offgrid" name="project_type" value="offgrid">
+                                                <label class="ib-project-label" for="project_type_offgrid">Off-Grid Cabin System</label>
+                                            </div>
+                                        </div>
+                                        <div id="project_type_error" class="ib-invalid-msg">Please choose one project type.</div>
+                                    </div>
+                                </div>
+
+                                <div class="ib-form-title mt-4">Contact</div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="full_name" class="form-label fw-600">Full Name <span class="ib-req">*</span></label>
+                                        <input id="full_name" name="full_name" type="text" class="form-control" placeholder="John Smith" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone_local" class="form-label fw-600">Phone <span class="ib-req">*</span></label>
+                                        <div class="ib-phone-wrap">
+                                            <span class="ib-phone-prefix"><span>🇺🇸</span><span>+1</span></span>
+                                            <input id="phone_local" type="tel" class="form-control" inputmode="numeric" autocomplete="tel-national" placeholder="(239) 241-0953" required>
+                                        </div>
+                                        <input type="hidden" id="phone" name="phone">
+                                        <div id="phone_error" class="ib-invalid-msg">Please enter a valid US phone number.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label fw-600">Email <span class="ib-req">*</span></label>
+                                        <input id="email" name="email" type="email" class="form-control" placeholder="name@email.com" required>
+                                    </div>
+                                    <div class="col-md-6 project-city">
+                                        <label for="city" class="form-label fw-600">City <span class="ib-req">*</span></label>
+                                        <input id="city" name="city" type="text" class="form-control" placeholder="San Antonio" data-required="true">
+                                    </div>
+                                </div>
+
+                                <div id="rv-fields" class="project-fields d-none">
+                                    <div class="ib-form-title mt-4">RV Info</div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="rv_type" class="form-label fw-600">RV Type <span class="ib-req">*</span></label>
+                                            <select id="rv_type" name="rv_type" class="form-select" data-required="true">
+                                                <option value="">Select RV type...</option>
+                                                <option value="Travel Trailer">Travel Trailer</option>
+                                                <option value="5th Wheel">5th Wheel</option>
+                                                <option value="Motorhome">Motorhome</option>
+                                                <option value="Van">Van</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="rv_amp_service" class="form-label fw-600">30A or 50A? <span class="ib-req">*</span></label>
+                                            <select id="rv_amp_service" name="rv_amp_service" class="form-select" data-required="true">
+                                                <option value="">Select service...</option>
+                                                <option value="30A">30A</option>
+                                                <option value="50A">50A</option>
+                                                <option value="Not sure">Not sure</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="rv_system_level" class="form-label fw-600">What level system are you looking for? <span class="ib-req">*</span></label>
+                                            <select id="rv_system_level" name="rv_system_level" class="form-select" data-required="true">
+                                                <option value="">Select system level...</option>
+                                                <option value="Full off-grid capability">Full off-grid capability</option>
+                                                <option value="Heavy appliance use">Heavy appliance use</option>
+                                                <option value="Air-conditioning capable">Air-conditioning capable</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="rv_usage" class="form-label fw-600">Usage <span class="ib-req">*</span></label>
+                                            <select id="rv_usage" name="rv_usage" class="form-select" data-required="true">
+                                                <option value="">Select usage...</option>
+                                                <option value="Weekend">Weekend</option>
+                                                <option value="Part-time">Part-time</option>
+                                                <option value="Full-time">Full-time</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-check ib-confirm-check mt-1">
+                                                <input class="form-check-input" type="checkbox" id="rv_budget_confirm" name="rv_budget_confirm" value="I understand complete RV solar systems start at $10,000+" data-required="true" required>
+                                                <label class="form-check-label" for="rv_budget_confirm">I understand complete RV solar systems start at $10,000+</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="offgrid-fields" class="project-fields d-none">
+                                    <div class="ib-form-title mt-4">Off-Grid Cabin Info</div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="cabin_location" class="form-label fw-600">Cabin location <span class="ib-req">*</span></label>
+                                            <input id="cabin_location" name="cabin_location" type="text" class="form-control" placeholder="City or county" data-required="true">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="cabin_usage" class="form-label fw-600">How is the cabin used? <span class="ib-req">*</span></label>
+                                            <select id="cabin_usage" name="cabin_usage" class="form-select" data-required="true">
+                                                <option value="">Select usage...</option>
+                                                <option value="Weekend">Weekend</option>
+                                                <option value="Part-time">Part-time</option>
+                                                <option value="Full-time living">Full-time living</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="cabin_system_level" class="form-label fw-600">System level needed <span class="ib-req">*</span></label>
+                                            <select id="cabin_system_level" name="cabin_system_level" class="form-select" data-required="true">
+                                                <option value="">Select system level...</option>
+                                                <option value="Essential power">Essential power</option>
+                                                <option value="Moderate use">Moderate use</option>
+                                                <option value="High demand / A/C capable">High demand / A/C capable</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="generator_on_site" class="form-label fw-600">Generator on site? <span class="ib-req">*</span></label>
+                                            <select id="generator_on_site" name="generator_on_site" class="form-select" data-required="true">
+                                                <option value="">Select one...</option>
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-check ib-confirm-check mt-1">
+                                                <input class="form-check-input" type="checkbox" id="offgrid_budget_confirm" name="offgrid_budget_confirm" value="I understand complete off-grid cabin systems start at $10,000+" data-required="true" required>
+                                                <label class="form-check-label" for="offgrid_budget_confirm">I understand complete off-grid cabin systems start at $10,000+</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 d-flex flex-wrap gap-3 align-items-center">
+                                    <button type="submit" class="btn-main btn-primary-fixed fx-slide"><span>Send Project Details</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-color py-5 pb-4 ib-prefooter">
+                <div class="container relative z-1">
+                    <div class="row g-4 grid-divider ib-prefooter-track">
+                        <div class="col-lg-4 col-md-6 mb-sm-30 wow fadeIn fadeInRight" data-wow-delay=".2s">
+                            <div class="d-flex justify-content-center">
+                                <i class="fs-60 text-dark icofont-location-pin"></i>
+                                <div class="ms-3">
+                                    <h4 class="mb-0">Location</h4>
+                                    <p class="text-dark">San Antonio, TX</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-sm-30 wow fadeIn fadeInRight" data-wow-delay=".4s">
+                            <div class="d-flex justify-content-center">
+                                <i class="fs-60 text-dark icon_phone"></i>
+                                <div class="ms-3">
+                                    <h4 class="mb-0">Call Us</h4>
+                                    <p class="text-dark"><a href="tel:+12392410953">(239) 241-0953</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-sm-30 wow fadeIn fadeInRight" data-wow-delay=".6s">
+                            <div class="d-flex justify-content-center">
+                                <i class="fs-60 text-dark icon_clock"></i>
+                                <div class="ms-3">
+                                    <h4 class="mb-0">Hours</h4>
+                                    <p class="text-dark">8:30am - 5:00pm</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <!-- footer begin -->
+        <footer class="section-dark">
+          <div class="container relative z-2">
+            <div class="row gx-5">
+              <div class="col-lg-4 col-sm-6">
+                <img src="images/installedbyus-logo-light.png" class="logo-footer" alt="">
+                <div class="spacer-20"></div>
+                <p>Installed By Us designs and installs custom RV and off-grid cabin solar systems for clients who want dependable power, safe wiring, and long-term reliability.</p>
+              </div>
+
+              <div class="col-lg-5 col-sm-12 order-lg-1 order-sm-2">
+                <div class="row">
+                  <div class="col-lg-7 col-sm-6">
+                    <div class="widget">
+                      <h5>Our Services</h5>
+                      <ul class="ul-check">
+                          <li>RV Solar Systems (No A/C)</li>
+                          <li>RV Solar Systems (A/C Capable)</li>
+                          <li>Off-Grid Cabin Systems</li>
+                          <li>Full Off-Grid Living Systems</li>
+                          <li>System Design &amp; Safety Integration</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-5 col-sm-6">
+                    <div class="widget">
+                      <h5>Navigation</h5>
+                      <ul>
+                        <li><a href="#rv-solar">RV Solar Systems</a></li>
+                        <li><a href="#offgrid-cabin">Off-Grid Cabin Systems</a></li>
+                        <li><a href="#how-we-move-forward">How It Works</a></li>
+                        <li><a href="#project-form">Contact</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-sm-6 order-lg-2 order-sm-1">
+                <div class="widget">
+                  <h5>Contact Us</h5>
+
+                  <div class="d-flex align-items-center">
+                    <i class="icofont-location-pin me-2 id-color"></i><span>San Antonio, TX</span>
+                  </div>
+
+                  <div class="spacer-20"></div>
+
+                  <div class="d-flex align-items-center">
+                    <a href="tel:+12392410953"><i class="icofont-phone me-2 id-color"></i><span>(239) 241-0953</span></a>
+                  </div>
+
+                  <div class="spacer-20"></div>
+
+                  <div class="d-flex align-items-center">
+                    <i class="icofont-clock-time me-2 id-color"></i><span>8:30am - 5:00pm</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subfooter">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="de-flex">
+                    <div class="de-flex-col">
+                      <span class="copy"><a href="https://webmastersdesktop.com/" target="_blank" rel="noopener noreferrer">Designed by WebmastersDesktop</a><span class="copy-tail">&nbsp;&copy;&nbsp;<span class="copyright-year"></span>&nbsp;All Rights Reserved.</span></span>
+                    </div>
+                    <ul class="menu-simple">
+                      <li><a href="#">Terms &amp; Conditions</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="abs w-50 end-0 bottom-0 op-3">
+              <img src="images/misc/c1.webp" class="w-100 rtl-hide wow fadeInRight" data-wow-duration="2s" alt="">
+              <img src="images/misc/c1-flip.webp" class="w-100 rtl-show wow fadeInLeft" data-wow-duration="2s" alt="">
+          </div>
+        </footer>
+        <!-- footer end -->
+    </div>
+
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="images/installedbyus-logo-light.png" class="w-150px" alt="">
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Our Services</h5>
+            <ul class="ul-check">
+                <li>RV Solar Systems (No A/C)</li>
+                <li>RV Solar Systems (A/C Capable)</li>
+                <li>Off-Grid Cabin Systems</li>
+                <li>Full Off-Grid Living Systems</li>
+                <li>System Design &amp; Safety Integration</li>
+            </ul>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Contact Us</h5>
+            <div><i class="icofont-clock-time me-2 op-5"></i>8:30am - 5:00pm</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>San Antonio, TX </div>
+            <div><a href="tel:+12392410953"><i class="icofont-phone me-2 op-5"></i>(239) 241-0953</a></div>
+            <div class="spacer-20"></div>
+            <div><a href="#project-form" class="btn-main btn-secondary-fixed fx-slide"><span>Get a Quote</span></a></div>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Installed By Us designs and installs custom RV and off-grid cabin solar systems for clients who want dependable power, safe wiring, and long-term reliability.</p>
+        </div>
+    </div>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/custom-swiper-1.js"></script>
+    <script src="js/custom-marquee.js"></script>
+    <script>
+      (function () {
+        var projectTypeRadios = document.querySelectorAll('input[name="project_type"]');
+        var rvFields = document.getElementById('rv-fields');
+        var offgridFields = document.getElementById('offgrid-fields');
+        var cityWrap = document.querySelector('.project-city');
+        var subject = document.getElementById('project_subject');
+        var projectForm = document.getElementById('project-intake-form');
+        var phoneLocal = document.getElementById('phone_local');
+        var phoneHidden = document.getElementById('phone');
+        var phoneError = document.getElementById('phone_error');
+        var projectTypeError = document.getElementById('project_type_error');
+        var projectTypeLabels = document.querySelectorAll('.ib-project-label');
+        var fitSlider = document.querySelector('.ib-fit-section .ib-fit-slider');
+        var fitDots = document.querySelectorAll('.ib-fit-section .ib-fit-dots button');
+
+        function currentProjectType() {
+          var selected = document.querySelector('input[name="project_type"]:checked');
+          return selected ? selected.value : '';
+        }
+
+        function normalizeUsDigits(value) {
+          var digits = (value || '').replace(/\D/g, '');
+          if (digits.length === 11 && digits.charAt(0) === '1') {
+            digits = digits.slice(1);
+          }
+          return digits;
+        }
+
+        function formatUsPhone(value) {
+          var digits = normalizeUsDigits(value).slice(0, 10);
+          if (!digits) return '';
+          if (digits.length < 4) return '(' + digits;
+          if (digits.length < 7) return '(' + digits.slice(0, 3) + ') ' + digits.slice(3);
+          return '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6, 10);
+        }
+
+        function toggleGroup(group, show) {
+          if (!group) return;
+          group.classList.toggle('d-none', !show);
+          group.querySelectorAll('input, select, textarea').forEach(function (el) {
+            var needsRequired = el.hasAttribute('data-required');
+            el.disabled = !show;
+            if (show && needsRequired) {
+              el.required = true;
+            } else if (needsRequired) {
+              el.required = false;
+            }
+          });
+        }
+
+        function syncFormByType() {
+          var type = currentProjectType();
+          var isRv = type === 'rv';
+          var isOffgrid = type === 'offgrid';
+
+          toggleGroup(rvFields, isRv);
+          toggleGroup(offgridFields, isOffgrid);
+
+          if (cityWrap) {
+            cityWrap.classList.toggle('d-none', isOffgrid);
+          }
+          var cityInput = document.getElementById('city');
+          if (cityInput) {
+            cityInput.required = isRv;
+            cityInput.disabled = isOffgrid;
+          }
+
+          if (subject) {
+            if (isRv) {
+              subject.value = 'New RV Solar Project Inquiry';
+            } else if (isOffgrid) {
+              subject.value = 'New Off-Grid Cabin Inquiry';
+            } else {
+              subject.value = 'New Project Inquiry - Installed By Us';
+            }
+          }
+        }
+
+        if (phoneLocal) {
+          phoneLocal.addEventListener('input', function () {
+            phoneLocal.value = formatUsPhone(phoneLocal.value);
+            if (phoneError) phoneError.classList.remove('show');
+          });
+        }
+
+        if (projectForm) {
+          projectForm.addEventListener('submit', function (e) {
+            var type = currentProjectType();
+            if (!type) {
+              e.preventDefault();
+              if (projectTypeError) projectTypeError.classList.add('show');
+              return;
+            }
+            if (projectTypeError) projectTypeError.classList.remove('show');
+
+            var digits = normalizeUsDigits(phoneLocal ? phoneLocal.value : '');
+            if (digits.length !== 10) {
+              e.preventDefault();
+              if (phoneError) phoneError.classList.add('show');
+              if (phoneLocal) phoneLocal.focus();
+              return;
+            }
+            if (phoneHidden) {
+              phoneHidden.value = '+1' + digits;
+            }
+          });
+        }
+
+        if (projectTypeRadios.length) {
+          projectTypeLabels.forEach(function (label) {
+            label.addEventListener('click', function (e) {
+              var inputId = label.getAttribute('for');
+              var input = inputId ? document.getElementById(inputId) : null;
+              if (input && input.checked) {
+                e.preventDefault();
+                input.checked = false;
+                if (projectTypeError) projectTypeError.classList.remove('show');
+                syncFormByType();
+              }
+            });
+          });
+          projectTypeRadios.forEach(function (radio) {
+            radio.addEventListener('change', function () {
+              if (projectTypeError) projectTypeError.classList.remove('show');
+              syncFormByType();
+            });
+          });
+          syncFormByType();
+        }
+
+        if (fitSlider && fitDots.length) {
+          var fitCards = fitSlider.querySelectorAll(':scope > [class*="col-"]');
+          var fitTicking = false;
+
+          function setActiveFitDot(index) {
+            fitDots.forEach(function (dot, i) {
+              dot.classList.toggle('active', i === index);
+            });
+          }
+
+          function syncFitDotsFromScroll() {
+            if (!fitCards.length) return;
+            var left = fitSlider.scrollLeft;
+            var activeIndex = 0;
+            var closest = Infinity;
+
+            fitCards.forEach(function (card, i) {
+              var delta = Math.abs(card.offsetLeft - left);
+              if (delta < closest) {
+                closest = delta;
+                activeIndex = i;
+              }
+            });
+
+            setActiveFitDot(activeIndex);
+          }
+
+          fitSlider.addEventListener('scroll', function () {
+            if (fitTicking) return;
+            fitTicking = true;
+            window.requestAnimationFrame(function () {
+              syncFitDotsFromScroll();
+              fitTicking = false;
+            });
+          }, { passive: true });
+
+          fitDots.forEach(function (dot, index) {
+            dot.addEventListener('click', function () {
+              var target = fitCards[index];
+              if (!target) return;
+              fitSlider.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+              setActiveFitDot(index);
+            });
+          });
+
+          syncFitDotsFromScroll();
+        }
+
+        if (window.jQuery) {
+          var $ = window.jQuery;
+          $('header').removeClass('menu-open').css('height', 'auto');
+          $('#mainmenu a').off('click').on('click', function (e) {
+            var target = this.getAttribute('href');
+            if (!target || target.charAt(0) !== '#') return;
+            e.preventDefault();
+            $('header').removeClass('menu-open').css('height', 'auto');
+            var section = document.querySelector(target);
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        }
+      })();
+    </script>
+
+</body>
+
+</html>
