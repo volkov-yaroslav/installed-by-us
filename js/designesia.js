@@ -29,6 +29,8 @@
     var headerDownDistance = 0;
     var headerShowThreshold = 150;
     var headerHideThreshold = 22;
+    var headerTopSafeZone = 170;
+    var headerNearTopShowThreshold = 30;
 
     /* predefined vars end */
 
@@ -2164,6 +2166,17 @@
              if(header_autoshow==="on"){
                  last_scroll_position = window.scrollY;
                  var delta = last_scroll_position - new_scroll_position;
+                 var nearTop = last_scroll_position <= headerTopSafeZone;
+
+                 // Keep header visible near page top to avoid hide/show glitches on tiny scrolls.
+                 if (nearTop) {
+                     header.removeClass("scroll-down");
+                     header.addClass("nav-up");
+                     headerUpDistance = 0;
+                     headerDownDistance = 0;
+                     new_scroll_position = last_scroll_position;
+                     return;
+                 }
 
                  if (Math.abs(delta) <= 2) {
                      // ignore tiny jitter
@@ -2171,7 +2184,7 @@
                      // scrolling down: hide header quickly
                      headerDownDistance += delta;
                      headerUpDistance = 0;
-                     if (last_scroll_position > 80 && headerDownDistance >= headerHideThreshold) {
+                     if (headerDownDistance >= headerHideThreshold) {
                          header.addClass("scroll-down");
                          header.removeClass("nav-up");
                          headerDownDistance = 0;
@@ -2180,7 +2193,8 @@
                      // scrolling up: require larger movement before revealing
                      headerUpDistance += Math.abs(delta);
                      headerDownDistance = 0;
-                     if (headerUpDistance >= headerShowThreshold) {
+                     var effectiveShowThreshold = last_scroll_position <= (headerTopSafeZone + 220) ? headerNearTopShowThreshold : headerShowThreshold;
+                     if (headerUpDistance >= effectiveShowThreshold) {
                          header.removeClass("scroll-down");
                          header.addClass("nav-up");
                          headerUpDistance = 0;
