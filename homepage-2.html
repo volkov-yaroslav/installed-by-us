@@ -8,15 +8,17 @@
     <title>Installed By Us - RV & Off-Grid Solar</title>
     <link rel="icon" href="images/by-us-icon.jpg" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" >
     <meta content="Custom RV and off-grid solar systems in San Antonio and Texas Hill Country." name="description" >
     <meta content="RV solar installation, off-grid cabin solar, San Antonio solar installer, Texas Hill Country solar, off-grid power systems, RV battery and inverter systems" name="keywords" >
     <meta content="Installed By Us" name="author" >
     <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#0f2647">
+    <meta name="theme-color" content="#0f2647"/>
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0f2647"/>
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f2647"/>
     <meta name="msapplication-navbutton-color" content="#0f2647">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="canonical" href="https://san-antonio.installedbyus.com/homepage-2.html">
 
     <meta property="og:type" content="website">
@@ -1431,8 +1433,9 @@
                                     </div>
                                 </div>
 
-                                <div class="mt-4 d-flex flex-wrap gap-3 align-items-center">
-                                    <button type="submit" class="btn-main btn-primary-fixed fx-slide"><span>Send Project Details</span></button>
+                                <div class="mt-4 d-flex flex-wrap gap-3 align-items-center ib-form-submit-row">
+                                    <button id="project-submit-btn" type="submit" class="btn-main btn-primary-fixed fx-slide"><span>Send Project Details</span></button>
+                                    <div id="project_form_status" class="ib-form-status" role="status" aria-live="polite"></div>
                                 </div>
                             </form>
                         </div>
@@ -1627,6 +1630,8 @@
         var phoneError = document.getElementById('phone_error');
         var projectTypeError = document.getElementById('project_type_error');
         var projectTypeLabels = document.querySelectorAll('.ib-project-label');
+        var formStatus = document.getElementById('project_form_status');
+        var submitBtn = document.getElementById('project-submit-btn');
         var fitSlider = document.querySelector('.ib-fit-section .ib-fit-slider');
         var fitDots = document.querySelectorAll('.ib-fit-section .ib-fit-dots button');
 
@@ -1649,6 +1654,16 @@
           if (digits.length < 4) return '(' + digits;
           if (digits.length < 7) return '(' + digits.slice(0, 3) + ') ' + digits.slice(3);
           return '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6, 10);
+        }
+
+        function setFormStatus(type, message) {
+          if (!formStatus) return;
+          formStatus.classList.remove('is-success', 'is-error', 'is-loading');
+          formStatus.textContent = message || '';
+          if (!message) return;
+          if (type === 'success') formStatus.classList.add('is-success');
+          if (type === 'error') formStatus.classList.add('is-error');
+          if (type === 'loading') formStatus.classList.add('is-loading');
         }
 
         function toggleGroup(group, show) {
@@ -1702,24 +1717,62 @@
 
         if (projectForm) {
           projectForm.addEventListener('submit', function (e) {
+            e.preventDefault();
             var type = currentProjectType();
             if (!type) {
-              e.preventDefault();
               if (projectTypeError) projectTypeError.classList.add('show');
+              setFormStatus('error', 'Please choose your project type.');
               return;
             }
             if (projectTypeError) projectTypeError.classList.remove('show');
 
             var digits = normalizeUsDigits(phoneLocal ? phoneLocal.value : '');
             if (digits.length !== 10) {
-              e.preventDefault();
               if (phoneError) phoneError.classList.add('show');
               if (phoneLocal) phoneLocal.focus();
+              setFormStatus('error', 'Please enter a valid US phone number.');
               return;
             }
             if (phoneHidden) {
               phoneHidden.value = '+1' + digits;
             }
+
+            if (!projectForm.checkValidity()) {
+              projectForm.reportValidity();
+              return;
+            }
+
+            if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.classList.add('disabled');
+            }
+            setFormStatus('loading', 'Sending your details...');
+
+            fetch(projectForm.action, {
+              method: 'POST',
+              body: new FormData(projectForm),
+              headers: {
+                'Accept': 'application/json'
+              }
+            }).then(function (response) {
+              if (!response.ok) {
+                throw new Error('Form submission failed');
+              }
+              setFormStatus('success', 'Thank you. Your request was sent successfully.');
+              projectForm.reset();
+              if (phoneHidden) phoneHidden.value = '';
+              if (phoneLocal) phoneLocal.value = '';
+              if (projectTypeError) projectTypeError.classList.remove('show');
+              if (phoneError) phoneError.classList.remove('show');
+              syncFormByType();
+            }).catch(function () {
+              setFormStatus('error', 'Unable to send right now. Please call (210) 792-8674.');
+            }).finally(function () {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('disabled');
+              }
+            });
           });
         }
 

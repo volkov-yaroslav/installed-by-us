@@ -13388,3 +13388,48 @@ header .topbar-widget i {
   margin: 0 !important;
   color: currentColor;
 }
+
+/* iOS Safari chrome/safe-area fallback color */
+:root {
+  background-color: #0f2647;
+}
+
+html,
+body {
+  background-color: #0f2647;
+}
+
+#wrapper {
+  background-color: #ffffff;
+}
+
+.ib-form-submit-row {
+  align-items: center;
+}
+
+.ib-form-status {
+  min-height: 1.5em;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ib-form-status.is-success {
+  color: #c9ffd6;
+}
+
+.ib-form-status.is-error {
+  color: #ffd2d2;
+}
+
+.ib-form-status.is-loading {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media only screen and (max-width: 767px) {
+  .ib-form-submit-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
