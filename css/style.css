@@ -13420,7 +13420,11 @@ body {
 }
 
 .ib-form-status.is-error {
-  color: #ffd2d2;
+  color: #ffe7e5;
+  background: rgba(143, 23, 18, 0.55);
+  border: 1px solid rgba(255, 180, 174, 0.6);
+  border-radius: 8px;
+  padding: 8px 10px;
 }
 
 .ib-form-status.is-loading {
