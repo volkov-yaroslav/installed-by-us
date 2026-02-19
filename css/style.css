@@ -13411,24 +13411,30 @@ body {
   min-height: 1.5em;
   font-size: 18px;
   line-height: 1.4;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  background: transparent;
 }
 
 .ib-form-status.is-success {
-  color: #c9ffd6;
+  color: #e9fff0;
+  background: #1f6f3d;
+  border-color: #2f8f54;
 }
 
 .ib-form-status.is-error {
-  color: #ffe7e5;
-  background: rgba(143, 23, 18, 0.55);
-  border: 1px solid rgba(255, 180, 174, 0.6);
-  border-radius: 8px;
-  padding: 8px 10px;
+  color: #fff0ee;
+  background: #8f1712;
+  border-color: #b52b24;
 }
 
 .ib-form-status.is-loading {
-  color: rgba(255, 255, 255, 0.9);
+  color: #fff8de;
+  background: #5d4a05;
+  border-color: #8c7310;
 }
 
 @media only screen and (max-width: 767px) {
