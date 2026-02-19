@@ -13368,6 +13368,8 @@ footer span {
 /* keep decorative footer art from blocking legal links */
 footer .abs.w-50.end-0.bottom-0.op-3 {
   pointer-events: none;
+  bottom: -72px !important;
+  transform: translateY(22%) !important;
 }
 
 /* top header bar icon/text balance */
