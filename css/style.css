@@ -13437,6 +13437,25 @@ body {
   border-color: #8c7310;
 }
 
+.ib-intake-card p.ib-recaptcha-disclosure {
+  font-size: 14px !important;
+  line-height: 1.5;
+  color: #3f4a59;
+}
+
+.ib-intake-card .ib-recaptcha-disclosure a {
+  color: #edbf00;
+  text-decoration: underline;
+}
+
+.ib-intake-card .ib-recaptcha-disclosure a:hover {
+  color: #f6d54d;
+}
+
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
 @media only screen and (max-width: 767px) {
   .ib-form-submit-row {
     flex-direction: column;
