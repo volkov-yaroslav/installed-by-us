@@ -64,7 +64,7 @@ Table of content:
 * {
   /* body font */
   --body-font: "Manrope", Helvetica, Arial, sans-serif;
-  --body-font-size: 16px;
+  --body-font-size: 18px;
   --body-font-color: #606060;
   --body-font-color-dark: rgba(255, 255, 255, .8);
   --body-font-weight: 400;
@@ -112,7 +112,7 @@ Table of content:
   --h6-margin-bottom: 10px;
   /* mainmenu */
   --mainmenu-font: var(--body-font);
-  --mainmenu-font-size: 16px;
+  --mainmenu-font-size: 18px;
   --mainmenu-font-weight: 600;
   --mainmenu-letter-spacing: 0;
   --mainmenu-text-transform: none;
@@ -13325,4 +13325,64 @@ img {
     overflow: hidden !important;
     overscroll-behavior: none;
   }
+}
+
+/* global typography baseline */
+body {
+  font-size: 18px;
+}
+
+p,
+li,
+a,
+input,
+select,
+textarea,
+.form-control,
+.form-select {
+  font-size: 18px;
+}
+
+label,
+.form-label,
+.ib-form-title,
+.widget h5 {
+  font-size: 20px;
+}
+
+header a,
+header span,
+header .topbar-widget a,
+header .topbar-widget span,
+header #mainmenu > li > a {
+  font-size: 18px;
+}
+
+footer p,
+footer li,
+footer a,
+footer span {
+  font-size: 18px;
+}
+
+/* keep decorative footer art from blocking legal links */
+footer .abs.w-50.end-0.bottom-0.op-3 {
+  pointer-events: none;
+}
+
+/* top header bar icon/text balance */
+.ib-topbar-row .topbar-widget > a,
+.ib-topbar-row .topbar-widget > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ib-topbar-row i,
+header .topbar-widget i {
+  font-size: 20px;
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0 !important;
+  color: currentColor;
 }

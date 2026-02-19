@@ -7,7 +7,7 @@
     //$('.show-on-scroll,#selector,#back-to-top').hide();
 
     var rtl_mode = 'off'; // on - for enable RTL, off - for deactive RTL
-    var preloader = 'on'; // on - for enable preloader, off - for disable preloader
+    var preloader = 'off'; // on - for enable preloader, off - for disable preloader
     var header_autoshow = "on"; // on - for enable fixed header, off - for disable fixed header
     var topbar = "on"; // on - for enable fixed topbar, off - for disable fixed topbar
     var show_scroll_to_top = "on"; // on - for enable scroll to top button
@@ -25,6 +25,10 @@
     var new_scroll_position = 0;
     var last_scroll_position;
     var header = $("header");
+    var headerUpDistance = 0;
+    var headerDownDistance = 0;
+    var headerShowThreshold = 150;
+    var headerHideThreshold = 22;
 
     /* predefined vars end */
 
@@ -102,7 +106,32 @@
              mainClass: 'mfp-fade',
              removalDelay: 160,
              preloader: false,
-             fixedContentPos: false
+             fixedContentPos: false,
+             callbacks: {
+                 open: function() {
+                     // Ensure browser allows autoplay inside the popup iframe.
+                     window.setTimeout(function() {
+                         var $frame = jQuery('.mfp-iframe');
+                         if (!$frame.length) {
+                             return;
+                         }
+                         $frame.attr('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
+                         var src = $frame.attr('src') || '';
+                         if (!src) {
+                             return;
+                         }
+                         var sep = src.indexOf('?') === -1 ? '?' : '&';
+                         if (src.indexOf('autoplay=1') === -1) {
+                             src += sep + 'autoplay=1';
+                             sep = '&';
+                         }
+                         if (src.indexOf('playsinline=1') === -1) {
+                             src += sep + 'playsinline=1';
+                         }
+                         $frame.attr('src', src);
+                     }, 0);
+                 }
+             }
          });
          // Initialize popup as usual
          $('.image-popup').magnificPopup({
@@ -1901,7 +1930,7 @@
          jQuery(".arrow-up").on("click", function() {
              jQuery(".coming-soon .coming-soon-content").fadeOut("medium", function() {
                  jQuery("#hide-content").fadeIn(600, function() {
-                     jQuery('.arrow-up').animate({
+             jQuery('.arrow-up').animate({
                          'bottom': '-40px'
                      }, "slow");
                      jQuery('.arrow-down').animate({
@@ -1910,6 +1939,23 @@
                  });
              });
          });
+
+         // accordion click binding should be attached once, not inside scroll handler
+         $('.toggle').off('click').on("click", function(e) {
+            e.preventDefault();
+
+            var $this = $(this);
+
+            if ($this.next().hasClass('show')) {
+                $this.next().removeClass('show');
+                $this.next().slideUp(350);
+            } else {
+                $this.parent().parent().find('li .inner').removeClass('show');
+                $this.parent().parent().find('li .inner').slideUp(350);
+                $this.next().toggleClass('show');
+                $this.next().slideToggle(350);
+            }
+        });
          // btn arrow down
          jQuery(".arrow-down").on("click", function() {
              jQuery("#hide-content").fadeOut("slow", function() {
@@ -2115,37 +2161,30 @@
                }
              // magic close
 			 
-			 // acc
-			 $('.toggle').on("click", function(e) {
-				e.preventDefault();
-			  
-				var $this = $(this);
-			  
-				if ($this.next().hasClass('show')) {
-					$this.next().removeClass('show');
-					$this.next().slideUp(350);
-				} else {
-					$this.parent().parent().find('li .inner').removeClass('show');
-					$this.parent().parent().find('li .inner').slideUp(350);
-					$this.next().toggleClass('show');
-					$this.next().slideToggle(350);
-				}
-			});
-
              if(header_autoshow==="on"){
                  last_scroll_position = window.scrollY;
+                 var delta = last_scroll_position - new_scroll_position;
 
-                 // Scrolling down
-                 if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
-                   // header.removeClass('slideDown').addClass('nav-up');
-                   header.addClass("scroll-down");
-                   header.removeClass("nav-up");
-
-                 // Scrolling up
-                 } else if (new_scroll_position > last_scroll_position) {
-                   // header.removeClass('nav-up').addClass('slideDown');
-                   header.removeClass("scroll-down");
-                   header.addClass("nav-up");
+                 if (Math.abs(delta) <= 2) {
+                     // ignore tiny jitter
+                 } else if (delta > 0) {
+                     // scrolling down: hide header quickly
+                     headerDownDistance += delta;
+                     headerUpDistance = 0;
+                     if (last_scroll_position > 80 && headerDownDistance >= headerHideThreshold) {
+                         header.addClass("scroll-down");
+                         header.removeClass("nav-up");
+                         headerDownDistance = 0;
+                     }
+                 } else {
+                     // scrolling up: require larger movement before revealing
+                     headerUpDistance += Math.abs(delta);
+                     headerDownDistance = 0;
+                     if (headerUpDistance >= headerShowThreshold) {
+                         header.removeClass("scroll-down");
+                         header.addClass("nav-up");
+                         headerUpDistance = 0;
+                     }
                  }
 
                  new_scroll_position = last_scroll_position;
