@@ -1,0 +1,4 @@
+---
+deployment:
+  tasks:
+    - /bin/echo "Deployment hook ran: repository path is the live document root (/home/installedbyus/san-antonio.installedbyus.com)."
