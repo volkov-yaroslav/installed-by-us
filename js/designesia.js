@@ -1906,22 +1906,42 @@
          // --------------------------------------------------
          // navigation for mobile
          // --------------------------------------------------
-         jQuery('#menu-btn, #mainmenu a').on("click", function() {
+         // Mobile nav toggle: keep desktop nav clicks from mutating header height/state.
+         jQuery('#menu-btn').on("click", function() {
+             var isMobileViewport = window.matchMedia("(max-width: 992px)").matches;
+             if (!isMobileViewport) {
+                 return;
+             }
+             var $header = jQuery('header');
+             var isOpen = $header.hasClass('menu-open');
 
-            var h = jQuery('header')[0].scrollHeight;
-			
-             if (mobile_menu_show === 0) {
-                 jQuery('header').addClass('menu-open');
-                 jQuery('header').css('height',$(window).innerHeight());
+             if (!isOpen) {
+                 $header.addClass('menu-open');
+                 $header.css('height', jQuery(window).innerHeight());
                  mobile_menu_show = 1;
                  jQuery('#menu-btn').addClass("menu-open");
              } else {
-                jQuery('header').removeClass('menu-open');
-                jQuery('header').css('height','auto');
+                 $header.removeClass('menu-open');
+                 $header.css('height', 'auto');
                  mobile_menu_show = 0;
                  jQuery('#menu-btn').removeClass("menu-open");
              }
-         })
+         });
+
+         // On mobile, close menu after selecting a nav item.
+         jQuery('#mainmenu a').on("click", function() {
+             var isMobileViewport = window.matchMedia("(max-width: 992px)").matches;
+             if (!isMobileViewport) {
+                 return;
+             }
+             var $header = jQuery('header');
+             if ($header.hasClass('menu-open')) {
+                 $header.removeClass('menu-open');
+                 $header.css('height', 'auto');
+                 mobile_menu_show = 0;
+                 jQuery('#menu-btn').removeClass("menu-open");
+             }
+         });
          jQuery("a.btn").on("click", function(evn) {
              if (this.href.indexOf('#') === -1) {
                  evn.preventDefault();
