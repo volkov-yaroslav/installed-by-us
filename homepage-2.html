@@ -1640,6 +1640,7 @@
         var formStatus = document.getElementById('project_form_status');
         var submitBtn = document.getElementById('project-submit-btn');
         var recaptchaSiteKey = '6LdeXHEsAAAAAIjURsV3u9GzTuUrySBXkjxyllni';
+        var genericSubmitError = 'Unable to send right now. Please call (210) 792-8674.';
         var fitSlider = document.querySelector('.ib-fit-section .ib-fit-slider');
         var fitDots = document.querySelectorAll('.ib-fit-section .ib-fit-dots button');
 
@@ -1677,18 +1678,18 @@
         function getRecaptchaToken() {
           return new Promise(function (resolve, reject) {
             if (!window.grecaptcha || !window.grecaptcha.ready || !window.grecaptcha.execute) {
-              reject(new Error('reCAPTCHA is not ready. Please refresh and try again.'));
+              reject(new Error(genericSubmitError));
               return;
             }
             window.grecaptcha.ready(function () {
               window.grecaptcha.execute(recaptchaSiteKey, { action: 'submit' }).then(function (token) {
                 if (!token) {
-                  reject(new Error('reCAPTCHA verification failed. Please try again.'));
+                  reject(new Error(genericSubmitError));
                   return;
                 }
                 resolve(token);
               }).catch(function () {
-                reject(new Error('reCAPTCHA verification failed. Please try again.'));
+                reject(new Error(genericSubmitError));
               });
             });
           });
@@ -1799,8 +1800,12 @@
                     ? data.errors.map(function (item) { return item.message; }).join(' ')
                     : '';
                   var bodyMessage = data && data.error ? data.error : '';
-                  var fallback = 'Unable to send right now. Please call (210) 792-8674.';
-                  throw new Error(details || bodyMessage || ('Request failed (' + response.status + '). ' + fallback));
+                  console.error('Formspree submit error', {
+                    status: response.status,
+                    details: details,
+                    bodyMessage: bodyMessage
+                  });
+                  throw new Error(genericSubmitError);
                 }
                 setFormStatus('success', 'Thank you. Your request was sent successfully.');
                 projectForm.reset();
@@ -1810,9 +1815,8 @@
                 if (phoneError) phoneError.classList.remove('show');
                 syncFormByType();
               });
-            }).catch(function (error) {
-              var message = error && error.message ? error.message : 'Unable to send right now. Please call (210) 792-8674.';
-              setFormStatus('error', message);
+            }).catch(function () {
+              setFormStatus('error', genericSubmitError);
             }).finally(function () {
               if (submitBtn) {
                 submitBtn.disabled = false;
