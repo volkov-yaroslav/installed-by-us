@@ -32,6 +32,7 @@
     <meta name="twitter:title" content="Installed By Us - RV &amp; Off-Grid Solar">
     <meta name="twitter:description" content="Custom RV and off-grid solar systems in San Antonio and Texas Hill Country.">
     <meta name="twitter:image" content="https://san-antonio.installedbyus.com/images/installedbyus-logo-light.png">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdeXHEsAAAAAIjURsV3u9GzTuUrySBXkjxyllni" async defer></script>
     <!-- CSS Files
     ================================================== -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
@@ -1638,6 +1639,7 @@
         var projectTypeLabels = document.querySelectorAll('.ib-project-label');
         var formStatus = document.getElementById('project_form_status');
         var submitBtn = document.getElementById('project-submit-btn');
+        var recaptchaSiteKey = '6LdeXHEsAAAAAIjURsV3u9GzTuUrySBXkjxyllni';
         var fitSlider = document.querySelector('.ib-fit-section .ib-fit-slider');
         var fitDots = document.querySelectorAll('.ib-fit-section .ib-fit-dots button');
 
@@ -1670,6 +1672,26 @@
           if (type === 'success') formStatus.classList.add('is-success');
           if (type === 'error') formStatus.classList.add('is-error');
           if (type === 'loading') formStatus.classList.add('is-loading');
+        }
+
+        function getRecaptchaToken() {
+          return new Promise(function (resolve, reject) {
+            if (!window.grecaptcha || !window.grecaptcha.ready || !window.grecaptcha.execute) {
+              reject(new Error('reCAPTCHA is not ready. Please refresh and try again.'));
+              return;
+            }
+            window.grecaptcha.ready(function () {
+              window.grecaptcha.execute(recaptchaSiteKey, { action: 'submit' }).then(function (token) {
+                if (!token) {
+                  reject(new Error('reCAPTCHA verification failed. Please try again.'));
+                  return;
+                }
+                resolve(token);
+              }).catch(function () {
+                reject(new Error('reCAPTCHA verification failed. Please try again.'));
+              });
+            });
+          });
         }
 
         function toggleGroup(group, show) {
@@ -1754,25 +1776,43 @@
             }
             setFormStatus('loading', 'Sending your details...');
 
-            fetch(projectForm.action, {
-              method: 'POST',
-              body: new FormData(projectForm),
-              headers: {
-                'Accept': 'application/json'
-              }
+            getRecaptchaToken().then(function (token) {
+              var payload = new FormData(projectForm);
+              payload.append('g-recaptcha-response', token);
+              return fetch(projectForm.action, {
+                method: 'POST',
+                body: payload,
+                headers: {
+                  'Accept': 'application/json'
+                }
+              });
             }).then(function (response) {
-              if (!response.ok) {
-                throw new Error('Form submission failed');
-              }
-              setFormStatus('success', 'Thank you. Your request was sent successfully.');
-              projectForm.reset();
-              if (phoneHidden) phoneHidden.value = '';
-              if (phoneLocal) phoneLocal.value = '';
-              if (projectTypeError) projectTypeError.classList.remove('show');
-              if (phoneError) phoneError.classList.remove('show');
-              syncFormByType();
-            }).catch(function () {
-              setFormStatus('error', 'Unable to send right now. Please call (210) 792-8674.');
+              return response.text().then(function (rawText) {
+                var data = null;
+                try {
+                  data = rawText ? JSON.parse(rawText) : null;
+                } catch (parseError) {
+                  data = null;
+                }
+                if (!response.ok) {
+                  var details = data && data.errors && data.errors.length
+                    ? data.errors.map(function (item) { return item.message; }).join(' ')
+                    : '';
+                  var bodyMessage = data && data.error ? data.error : '';
+                  var fallback = 'Unable to send right now. Please call (210) 792-8674.';
+                  throw new Error(details || bodyMessage || ('Request failed (' + response.status + '). ' + fallback));
+                }
+                setFormStatus('success', 'Thank you. Your request was sent successfully.');
+                projectForm.reset();
+                if (phoneHidden) phoneHidden.value = '';
+                if (phoneLocal) phoneLocal.value = '';
+                if (projectTypeError) projectTypeError.classList.remove('show');
+                if (phoneError) phoneError.classList.remove('show');
+                syncFormByType();
+              });
+            }).catch(function (error) {
+              var message = error && error.message ? error.message : 'Unable to send right now. Please call (210) 792-8674.';
+              setFormStatus('error', message);
             }).finally(function () {
               if (submitBtn) {
                 submitBtn.disabled = false;
