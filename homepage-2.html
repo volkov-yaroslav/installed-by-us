@@ -354,6 +354,23 @@
         .ib-fit-dots {
             display: none;
         }
+        .ib-hero-alt {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 0 120px;
+            overflow: hidden;
+        }
+        .ib-hero-alt > .container {
+            width: 100%;
+        }
+        .ib-hero-alt > img.w-100.z-2 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            pointer-events: none;
+        }
 
         @media only screen and (max-width: 1280px) {
             .ib-actions .btn-main {
@@ -824,6 +841,10 @@
             .ib-header .ib-mainbar {
                 padding: 8px 0 !important;
             }
+            .ib-hero-alt {
+                min-height: auto;
+                padding: 120px 0 90px;
+            }
             .ib-brand img {
                 width: min(200px, 58vw);
                 max-width: min(200px, 58vw);
@@ -960,12 +981,11 @@
 
             <div id="top"></div>
 
-            <section class="bg-dark text-light relative pb-0 jarallax">
+            <section class="bg-dark text-light relative pb-0 jarallax ib-hero-alt">
                 <img src="images/background/4.webp" class="jarallax-img" alt="">
                 <div class="gradient-edge-top op-5"></div>
                 <div class="container relative z-2">
                     <div class="row g-4 align-items-center">
-                        <div class="spacer-double"></div>
                         <div class="col-lg-7">
                             <div class="text-start">
                                 <p class="wow fadeInUp mb-2">Professional solar design and installation in <span style="font-weight:700; color:#edbf00;">San Antonio &amp; Texas Hill Country</span></p>
