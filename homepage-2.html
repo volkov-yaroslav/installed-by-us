@@ -411,6 +411,21 @@
             }
         }
 
+        /* small desktop safeguard: keep hero copy below full desktop header */
+        @media only screen and (min-width: 1025px) and (max-width: 1366px) {
+            .ib-hero {
+                min-height: calc(100vh + 70px);
+                padding-top: 90px;
+                align-items: flex-start;
+            }
+            .ib-hero .ib-hero-content {
+                margin-top: 0;
+            }
+            .ib-hero-alt {
+                padding-top: 280px;
+            }
+        }
+
         @media only screen and (max-width: 1024px) {
             .ib-header,
             .ib-header.fixed,
@@ -955,6 +970,50 @@
         .ib-prefooter .ib-prefooter-track .d-flex p,
         .ib-prefooter .ib-prefooter-track .d-flex a {
             font-size: 18px !important;
+        }
+        /* final safety override: never allow hero content behind header */
+        :root {
+            --ib-header-clearance: 170px;
+            --ib-hero-header-gap: 28px;
+        }
+        .ib-hero {
+            min-height: calc(100vh + var(--ib-header-clearance));
+            padding-top: calc(var(--ib-header-clearance) + var(--ib-hero-header-gap)) !important;
+            align-items: flex-start !important;
+        }
+        .ib-hero .ib-hero-content {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+        }
+        .ib-hero-alt {
+            padding-top: calc(var(--ib-header-clearance) + 90px) !important;
+        }
+        @media only screen and (max-width: 1280px) {
+            :root {
+                --ib-header-clearance: 158px;
+                --ib-hero-header-gap: 22px;
+            }
+            .ib-hero-alt {
+                padding-top: calc(var(--ib-header-clearance) + 82px) !important;
+            }
+        }
+        @media only screen and (max-width: 1024px) {
+            :root {
+                --ib-header-clearance: 96px;
+                --ib-hero-header-gap: 18px;
+            }
+            .ib-hero-alt {
+                padding-top: calc(var(--ib-header-clearance) + 44px) !important;
+            }
+        }
+        @media only screen and (max-width: 767px) {
+            :root {
+                --ib-header-clearance: 88px;
+                --ib-hero-header-gap: 14px;
+            }
+            .ib-hero-alt {
+                padding-top: calc(var(--ib-header-clearance) + 32px) !important;
+            }
         }
     </style>
 
