@@ -10047,7 +10047,10 @@ section.bg-grey {
 }
 
 .wow {
-  visibility: hidden;
+  visibility: visible !important;
+  animation: none !important;
+  -webkit-animation: none !important;
+  transition: none !important;
 }
 
 #back-to-top {

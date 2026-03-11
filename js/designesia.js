@@ -1417,7 +1417,7 @@
             jQuery('body').addClass('offcanvas-open');
             jQuery('#extra-wrap').addClass('open');
             lockBodyScroll();
-            jQuery('#extra-content').css('visibility', 'visible').addClass('animated fadeInRight');
+            jQuery('#extra-content').css('visibility', 'visible');
          }
 
          function closeExtraWrap() {
@@ -2016,7 +2016,7 @@
          custom_elements();
          init(); 
          
-         new WOW().init();
+         // Keep section content static instead of using reveal-on-scroll animations.
 
          
          // one page navigation
