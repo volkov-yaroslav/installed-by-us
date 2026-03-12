@@ -107,9 +107,53 @@
             align-items: center;
             gap: 14px;
         }
+        .btn-main,
+        a.btn-main,
+        button.btn-main,
+        input[type=button].btn-main {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+            line-height: 1.1 !important;
+        }
         .ib-actions .btn-main {
             padding: 10px 18px !important;
             line-height: 1.1 !important;
+        }
+        .btn-main.fx-slide {
+            overflow: hidden;
+        }
+        .btn-main.fx-slide span {
+            display: block;
+            position: relative;
+            transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+        }
+        .btn-main.fx-slide:hover span {
+            transform: translate(0, 40px);
+            opacity: 0;
+        }
+        .btn-main.fx-slide::before {
+            content: attr(data-hover);
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translate(0, -100%);
+            transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+            font: inherit;
+            letter-spacing: inherit;
+            line-height: 1.1;
+            text-transform: inherit;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        .btn-main.fx-slide:hover::before {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+        header .btn-main.fx-slide::before {
+            font-size: 18px;
         }
         .ib-header #menu-btn {
             display: none !important;
@@ -1118,7 +1162,7 @@
                         </nav>
 
                         <div class="ib-actions">
-                            <a href="#project-form" class="btn-main btn-secondary-fixed fx-slide"><span>Request Service</span></a>
+                            <a href="#project-form" class="btn-main btn-secondary-fixed fx-slide" data-hover="Request Service"><span>Request Service</span></a>
                             <div id="btn-extra" aria-label="Open Menu" role="button" tabindex="0">
                                 <span></span>
                                 <span></span>
@@ -1148,7 +1192,7 @@
                                     <p class="wow fadeInUp fs-20 fw-700 mb-4 ib-hero-summary" data-wow-delay=".4s">If your batteries are not charging, your inverter will not stay on, or your solar is not keeping up, we troubleshoot and repair RV and off-grid solar systems. We also handle upgrade work when it makes sense.</p>
 
                                     <div class="d-flex align-items-center wow fadeInUp" data-wow-delay=".5s">
-                                        <a class="btn-main btn-primary-fixed fx-slide me-4" href="#project-form"><span>Request Repair Help</span></a>
+                                        <a class="btn-main btn-primary-fixed fx-slide me-4" href="#project-form" data-hover="Request Repair Help"><span>Request Repair Help</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -1413,7 +1457,7 @@
                         <div class="col-lg-9">
                             <h2 class="wow fadeInUp" data-wow-delay=".1s">Contact us about solar repair</h2>
                             <p class="wow fadeInUp" data-wow-delay=".3s">Fill out the form with your contact info and a short description of the problem or the work you need. We will review it and get back to you about the next step.</p>
-                            <a href="#project-intake-form" class="btn-main btn-primary-fixed fx-slide wow fadeInUp" data-wow-delay=".4s"><span>Start Here</span></a>
+                            <a href="#project-intake-form" class="btn-main btn-primary-fixed fx-slide wow fadeInUp" data-hover="Start Here" data-wow-delay=".4s"><span>Start Here</span></a>
                         </div>
                     </div>
 
@@ -1493,7 +1537,7 @@
                                 </div>
 
                                 <div class="mt-4 d-flex flex-wrap gap-3 align-items-center ib-form-submit-row">
-                                    <button id="project-submit-btn" type="submit" class="btn-main btn-primary-fixed fx-slide"><span>Send Service Request</span></button>
+                                    <button id="project-submit-btn" type="submit" class="btn-main btn-primary-fixed fx-slide" data-hover="Send Service Request"><span>Send Service Request</span></button>
                                     <div id="project_form_status" class="ib-form-status" role="status" aria-live="polite"></div>
                                 </div>
                                 <p class="ib-recaptcha-disclosure mb-0 mt-3" style="font-size:14px !important; line-height:1.5 !important;">
@@ -1662,7 +1706,7 @@
             <div><i class="icofont-location-pin me-2 op-5"></i>San Antonio, TX </div>
             <a class="d-flex align-items-center" href="tel:+12107928674"><i class="icofont-phone me-2 op-5"></i><span>(210) 792-8674</span></a>
             <div class="spacer-20"></div>
-            <div><a href="#project-form" class="btn-main btn-secondary-fixed fx-slide"><span>Request Service</span></a></div>
+            <div><a href="#project-form" class="btn-main btn-secondary-fixed fx-slide" data-hover="Request Service"><span>Request Service</span></a></div>
 
             <div class="spacer-30-line"></div>
 
