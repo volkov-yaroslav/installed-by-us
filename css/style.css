@@ -13465,3 +13465,115 @@ body {
     align-items: flex-start;
   }
 }
+
+@media only screen and (min-width: 1600px) {
+  :root {
+    --container-max-width: 1480px;
+    --body-font-size: 20px;
+    --h1-font-size: 72px;
+    --h2-font-size: 56px;
+    --h3-font-size: 30px;
+    --h4-font-size: 22px;
+    --h5-font-size: 20px;
+    --mainmenu-font-size: 19px;
+    --logo-width: 360px;
+  }
+
+  body,
+  p,
+  li,
+  a,
+  input,
+  select,
+  textarea,
+  .form-control,
+  .form-select {
+    font-size: 20px;
+  }
+
+  label,
+  .form-label,
+  .ib-form-title,
+  .widget h5 {
+    font-size: 22px;
+  }
+
+  header a,
+  header span,
+  header .topbar-widget a,
+  header .topbar-widget span,
+  header #mainmenu > li > a {
+    font-size: 19px;
+  }
+
+  .ib-topbar-row i,
+  header .topbar-widget i {
+    font-size: 22px;
+  }
+
+  .btn-main,
+  a.btn-main,
+  input[type=button].btn-main {
+    font-size: 20px;
+    padding: 14px 30px;
+  }
+
+  section {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1480px;
+  }
+
+  .ib-intake-card {
+    padding: 52px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  :root {
+    --container-max-width: 1640px;
+    --body-font-size: 21px;
+    --h1-font-size: 80px;
+    --h2-font-size: 60px;
+    --logo-width: 390px;
+  }
+
+  body,
+  p,
+  li,
+  a,
+  input,
+  select,
+  textarea,
+  .form-control,
+  .form-select {
+    font-size: 21px;
+  }
+
+  .btn-main,
+  a.btn-main,
+  input[type=button].btn-main {
+    font-size: 21px;
+    padding: 16px 34px;
+  }
+
+  section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1640px;
+  }
+}
