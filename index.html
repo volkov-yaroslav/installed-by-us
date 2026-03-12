@@ -9,7 +9,7 @@
     <link rel="icon" href="images/by-us-icon.jpg" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" >
-    <meta content="RV solar repair, troubleshooting, lithium battery upgrades, and inverter replacements in San Antonio and Texas Hill Country. Off-grid cabin solar available by request." name="description" >
+    <meta content="RV solar repair, off-grid solar repair, lithium battery upgrades, and inverter replacement in San Antonio and Texas Hill Country." name="description" >
     <meta content="RV solar repair San Antonio, RV solar troubleshooting, lithium battery upgrade RV, RV inverter replacement, RV solar upgrades, off-grid cabin solar Texas Hill Country" name="keywords" >
     <meta content="Installed By Us" name="author" >
     <meta name="robots" content="index,follow">
@@ -24,13 +24,13 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Installed By Us">
     <meta property="og:title" content="Installed By Us - RV Solar Repair &amp; Upgrades">
-    <meta property="og:description" content="RV solar repair, troubleshooting, lithium battery upgrades, and inverter replacements in San Antonio and Texas Hill Country.">
+    <meta property="og:description" content="RV solar repair, off-grid solar repair, lithium battery upgrades, and inverter replacement in San Antonio and Texas Hill Country.">
     <meta property="og:url" content="https://san-antonio.installedbyus.com/">
     <meta property="og:image" content="https://san-antonio.installedbyus.com/images/og.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Installed By Us - RV Solar Repair &amp; Upgrades">
-    <meta name="twitter:description" content="RV solar repair, troubleshooting, lithium battery upgrades, and inverter replacements in San Antonio and Texas Hill Country.">
+    <meta name="twitter:description" content="RV solar repair, off-grid solar repair, lithium battery upgrades, and inverter replacement in San Antonio and Texas Hill Country.">
     <meta name="twitter:image" content="https://san-antonio.installedbyus.com/images/og.jpg">
     <script src="https://www.google.com/recaptcha/api.js?render=6LdeXHEsAAAAAIjURsV3u9GzTuUrySBXkjxyllni" async defer></script>
     <!-- CSS Files
@@ -564,6 +564,8 @@
         }
         @media only screen and (max-width: 991px) {
             .ib-hero .ib-hero-content {
+                display: block;
+                min-height: auto;
                 padding: 130px 0 54px;
             }
             .ib-svc-secondary {
@@ -966,9 +968,12 @@
         :root {
             --ib-header-clearance: 170px;
             --ib-hero-header-gap: 28px;
+            --ib-page-scale: 1;
         }
         .ib-hero {
-            min-height: 100vh;
+            min-height: calc(100vh / var(--ib-page-scale));
+            min-height: calc(100svh / var(--ib-page-scale));
+            box-sizing: border-box;
             padding-top: calc(var(--ib-header-clearance) + var(--ib-hero-header-gap)) !important;
             padding-bottom: 56px !important;
             align-items: center !important;
@@ -976,6 +981,35 @@
         .ib-hero .ib-hero-content {
             padding-top: 0 !important;
             margin-top: 0 !important;
+            display: flex;
+            align-items: center;
+            min-height: calc((100svh / var(--ib-page-scale)) - var(--ib-header-clearance) - var(--ib-hero-header-gap) - 56px);
+        }
+        .ib-hero .ib-hero-content > .container {
+            width: 100%;
+        }
+        .ib-hero-copy {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: auto;
+            max-width: 100%;
+        }
+        .ib-hero-title {
+            display: inline-block;
+            width: auto;
+            max-width: 100%;
+        }
+        .ib-hero-summary {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+        }
+        @media only screen and (min-width: 992px) {
+            .ib-hero-summary {
+                width: min(980px, 100%) !important;
+                max-width: min(980px, 100%) !important;
+            }
         }
         @media only screen and (max-width: 1280px) {
             :root {
@@ -993,6 +1027,26 @@
             :root {
                 --ib-header-clearance: 88px;
                 --ib-hero-header-gap: 14px;
+            }
+        }
+        @media only screen and (min-width: 1600px) {
+            :root {
+                --ib-header-clearance: 132px;
+                --ib-hero-header-gap: 12px;
+                --ib-page-scale: 1.22;
+            }
+            html {
+                zoom: 1.22;
+            }
+        }
+        @media only screen and (min-width: 1920px) {
+            :root {
+                --ib-header-clearance: 140px;
+                --ib-hero-header-gap: 14px;
+                --ib-page-scale: 1.34;
+            }
+            html {
+                zoom: 1.34;
             }
         }
     </style>
@@ -1034,7 +1088,7 @@
                         <nav class="ib-nav">
                             <ul id="mainmenu">
                                 <li><a class="menu-item" href="#rv-solar">RV Repair</a></li>
-                                <li><a class="menu-item" href="#offgrid-cabin">Off-Grid Cabin</a></li>
+                                <li><a class="menu-item" href="#offgrid-cabin">Off-Grid Repair</a></li>
                                 <li><a class="menu-item" href="#how-we-move-forward">How It Works</a></li>
                                 <li><a class="menu-item" href="#project-form">Contact</a></li>
                             </ul>
@@ -1065,13 +1119,13 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-11">
-                                <div class="text-start">
-                                    <p class="wow fadeInUp">Based in <span style="font-weight:700; color:#edbf00;">San Antonio &amp; Texas Hill Country</span></p>
-                                    <h1 class="fs-120 text-uppercase fs-sm-10vw mb-4 lh-1 wow fadeInUp" data-wow-delay=".2s">RV Solar Repair</h1>
-                                    <p class="wow fadeInUp fs-20 fw-700 mb-4" data-wow-delay=".4s">If your batteries are not charging, your inverter keeps faulting, or your solar never worked the way it should, send us the details. We also do lithium upgrades and some off-grid cabin work.</p>
+                                <div class="text-start ib-hero-copy">
+                                    <p class="wow fadeInUp">Solar repair in <span style="font-weight:700; color:#edbf00;">San Antonio &amp; Texas Hill Country</span></p>
+                                    <h1 class="fs-120 text-uppercase fs-sm-10vw mb-4 lh-1 wow fadeInUp ib-hero-title" data-wow-delay=".2s">RV Solar Repair</h1>
+                                    <p class="wow fadeInUp fs-20 fw-700 mb-4 ib-hero-summary" data-wow-delay=".4s">If your batteries are not charging, your inverter will not stay on, or your solar is not keeping up, we troubleshoot and repair RV and off-grid solar systems. We also handle upgrade work when it makes sense.</p>
 
                                     <div class="d-flex align-items-center wow fadeInUp" data-wow-delay=".5s">
-                                        <a class="btn-main btn-primary-fixed fx-slide me-4" href="#project-form"><span>Tell Us What's Going On</span></a>
+                                        <a class="btn-main btn-primary-fixed fx-slide me-4" href="#project-form"><span>Request Repair Help</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -1090,26 +1144,25 @@
                         </div>
 
                         <div class="col-lg-6 order-lg-2 ib-svc-media-col">
-                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">What We Do Most</div>
-                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Most of our calls are repairs, not new installs</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".3s">A lot of RV solar systems were pieced together over time. Wrong wire size, weak batteries, bad settings, cheap parts, or a system that was too small from the start. We get calls for battery charging problems, inverter issues, controller errors, and systems that just never kept up.</p>
+                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">RV Solar</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">RV solar repair service</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".3s">We work on RV solar systems that are not charging right, shutting down, or not producing the power they should. That includes batteries, inverters, charge controllers, wiring, and solar input problems.</p>
 
                             <div class="row g-3 mt-2">
                                 <div class="col-md-6">
                                     <div class="bg-light rounded-1 p-3 h-100 wow fadeInUp" data-wow-delay=".4s">
-                                        <h5 class="mb-1">Troubleshooting</h5>
-                                        <p class="mb-0 fw-700">Battery not charging, inverter faults, controller issues, low panel output</p>
+                                        <h5 class="mb-1">Common RV Issues</h5>
+                                        <p class="mb-0 fw-700">Battery not charging, inverter shutoffs, controller faults, low solar output</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="bg-light rounded-1 p-3 h-100 wow fadeInUp" data-wow-delay=".5s">
-                                        <h5 class="mb-1">Upgrades</h5>
-                                        <p class="mb-0 fw-700">Lithium swaps, inverter replacement, more battery, more solar, better charging</p>
+                                        <h5 class="mb-1">Upgrade Work</h5>
+                                        <p class="mb-0 fw-700">Lithium upgrades, inverter replacement, more battery, more solar</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <p class="wow fadeInUp mt-3 mb-0" data-wow-delay=".6s">If the system is acting up, start there. We can usually tell pretty quickly whether it sounds like something we can help with.</p>
                         </div>
                     </div>
                 </div>
@@ -1125,26 +1178,25 @@
                         </div>
 
                         <div class="col-lg-6 order-lg-1">
-                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">Other Jobs We Take On</div>
-                            <h2 class="wow fadeInUp" data-wow-delay=".2s">We still do some install work too</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".3s">RV repair is the main focus, but we also take on off-grid cabin systems, RV installs, and van projects when the job makes sense for us.</p>
+                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">Off-Grid Solar</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Off-grid solar repair service</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".3s">We also work on off-grid solar systems for cabins, small properties, and similar setups. If the system is not charging right, shutting down, or was installed poorly, we can take a look.</p>
 
                             <div class="row g-3 mt-2">
                                 <div class="col-md-6">
                                     <div class="bg-light rounded-1 p-3 h-100 wow fadeInUp" data-wow-delay=".4s">
-                                        <h5 class="mb-1">Cabin Systems</h5>
-                                        <p class="mb-0 fw-700">Small off-grid cabins, weekend places, and remote properties</p>
+                                        <h5 class="mb-1">Common Off-Grid Issues</h5>
+                                        <p class="mb-0 fw-700">Charging problems, inverter problems, weak battery storage, bad wiring</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="bg-light rounded-1 p-3 h-100 wow fadeInUp" data-wow-delay=".5s">
-                                        <h5 class="mb-1">Install Work</h5>
-                                        <p class="mb-0 fw-700">New RV systems, rebuilds, and bigger upgrade jobs</p>
+                                        <h5 class="mb-1">What We Help With</h5>
+                                        <p class="mb-0 fw-700">Troubleshooting, repairs, replacement parts, and upgrades</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <p class="wow fadeInUp mt-3 mb-0" data-wow-delay=".6s">If it is not a repair, send the details anyway. If it is in our lane, we will let you know.</p>
                         </div>
                     </div>
                 </div>
@@ -1166,17 +1218,15 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">Why It Gets Missed</div>
-                            <h2 class="wow fadeInUp" data-wow-delay=".2s">A bad RV solar system usually has more than one problem</h2>
+                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">RV Solar Repairs</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">RV solar problems are not always one bad part</h2>
                             <ul class="ul-check wow fadeInUp" data-wow-delay=".3s">
-                                <li>Charging problems can come from wiring, settings, batteries, or the charger itself</li>
-                                <li>Inverter issues often trace back to voltage drop, load, or a bad install</li>
-                                <li>Lithium upgrades need the right charging setup and protection</li>
-                                <li>Shore power, alternator charging, solar, and the battery bank all have to work together</li>
-                                <li>Bad wiring can damage equipment or create a fire risk</li>
+                                <li>The problem may be in the batteries, charger, inverter, controller, or wiring</li>
+                                <li>Replacing one part without checking the full system can waste time and money</li>
+                                <li>Lithium upgrades and inverter replacements also need the charging setup and wiring checked</li>
                             </ul>
                             <p class="wow fadeInUp mb-0" data-wow-delay=".4s">
-                                <i class="fa-solid fa-triangle-exclamation id-color me-2"></i>Sometimes the part that failed is not the only reason the system quit working.
+                                <i class="fa-solid fa-triangle-exclamation id-color me-2"></i>Bad wiring can damage equipment and create fire risk.
                             </p>
                         </div>
 
@@ -1191,9 +1241,9 @@
                 <div class="container">
                     <div class="row g-4 justify-content-center">
                         <div class="col-lg-8 text-center">
-                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">Good Fit If</div>
-                            <h2 class="wow fadeInUp" data-wow-delay=".2s">You should probably reach out if</h2>
-                            <p class="lead mb-0 wow fadeInUp">You do not need to know exactly what is wrong. You just need to know the system is not working the way it should.</p>
+                            <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">What We Help With</div>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Solar repair and upgrade work</h2>
+                            <p class="lead mb-0 wow fadeInUp">You do not need to diagnose the system first. Just tell us the problem and we will review it.</p>
                             <div class="spacer-single"></div>
                         </div>
                     </div>
@@ -1209,8 +1259,8 @@
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px d-flex align-items-center justify-content-center ib-fit-icon">
                                             <i class="fa-solid fa-check" style="color:#0f2647;"></i>
                                         </div>
-                                        <h4>Your Power Stopped Working</h4>
-                                        <p class="mb-0">Battery not charging, inverter shutting down, solar not keeping up, or power cutting out.</p>
+                                        <h4>RV Repair</h4>
+                                        <p class="mb-0">Battery problems, inverter shutoffs, low solar output, or power cutting out.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1226,8 +1276,8 @@
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px d-flex align-items-center justify-content-center ib-fit-icon">
                                             <i class="fa-solid fa-check" style="color:#0f2647;"></i>
                                         </div>
-                                        <h4>You Want to Upgrade Old Gear</h4>
-                                        <p class="mb-0">Lead-acid to lithium, weak inverter, not enough battery, or not enough solar.</p>
+                                        <h4>Off-Grid Repair</h4>
+                                        <p class="mb-0">Charging problems, weak batteries, bad output, or power dropping out.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1243,8 +1293,8 @@
                                         <div class="abs top-0 end-0 mt-min-30 me-4 circle bg-color w-60px h-60px d-flex align-items-center justify-content-center ib-fit-icon">
                                             <i class="fa-solid fa-check" style="color:#0f2647;"></i>
                                         </div>
-                                        <h4>You Want a Straight Answer</h4>
-                                        <p class="mb-0">If it is something we can help with, we will tell you. If not, we will say that too.</p>
+                                        <h4>Upgrade Work</h4>
+                                        <p class="mb-0">Lithium upgrades, inverter replacement, more battery, or more solar.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1264,7 +1314,7 @@
                     <div class="row g-4 justify-content-center">
                         <div class="col-lg-8 text-center">
                             <div class="d-inline-block bg-color text-dark rounded-pill px-3 py-1 fw-700 mb-3 wow fadeInUp">How It Works</div>
-                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Pretty simple</h2>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">What happens next</h2>
                         </div>
                     </div>
 
@@ -1273,29 +1323,29 @@
                         <div class="de-step-icon">
                           <i class="fas fa-list-check fa-2x"></i>
                         </div>
-                        <h4 class="fw-bold">Tell Us the Problem</h4>
-                        <p>Send us the basics on what the system is doing and where you are.</p>
+                        <h4 class="fw-bold">Send the Form</h4>
+                        <p>Tell us what you need help with and share the basic details.</p>
                       </div>
                       <div class="col-6 col-md-3 de-step de-step-arrow">
                         <div class="de-step-icon">
                           <i class="fas fa-sack-dollar fa-2x"></i>
                         </div>
-                        <h4 class="fw-bold">We Look It Over</h4>
-                        <p>We will see whether it sounds like a repair, an upgrade, or a bigger install job.</p>
+                        <h4 class="fw-bold">We Review It</h4>
+                        <p>We look over the information and see what kind of job it is.</p>
                       </div>
                       <div class="col-6 col-md-3 de-step de-step-arrow">
                         <div class="de-step-icon">
                           <i class="fas fa-van-shuttle fa-2x"></i>
                         </div>
-                        <h4 class="fw-bold">Next Step</h4>
-                        <p>If it looks like a fit, we will talk through the next step and scheduling.</p>
+                        <h4 class="fw-bold">We Contact You</h4>
+                        <p>We get back to you and talk through the next step.</p>
                       </div>
                       <div class="col-6 col-md-3 de-step">
                         <div class="de-step-icon">
                           <i class="fas fa-solar-panel fa-2x"></i>
                         </div>
-                        <h4 class="fw-bold">Fix or Upgrade</h4>
-                        <p>Then we sort out the repair or upgrade work from there.</p>
+                        <h4 class="fw-bold">Schedule the Work</h4>
+                        <p>We schedule the repair or upgrade work.</p>
                       </div>
                     </div>
                 </div>
@@ -1338,13 +1388,8 @@
                 <div class="container">
                     <div class="row justify-content-center text-center">
                         <div class="col-lg-9">
-                            <h2 class="wow fadeInUp" data-wow-delay=".1s">Tell us what your system is doing</h2>
-                            <ul class="lead wow fadeInUp text-start d-inline-block mb-3" data-wow-delay=".2s">
-                                <li>Battery not charging</li>
-                                <li>Inverter faulting</li>
-                                <li>Thinking about lithium or more power</li>
-                            </ul>
-                            <p class="wow fadeInUp" data-wow-delay=".3s">Send the basics and we will get back to you.</p>
+                            <h2 class="wow fadeInUp" data-wow-delay=".1s">Contact us about solar repair</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".3s">Fill out the form with your contact info and a short description of the problem or the work you need. We will review it and get back to you about the next step.</p>
                             <a href="#project-intake-form" class="btn-main btn-primary-fixed fx-slide wow fadeInUp" data-wow-delay=".4s"><span>Start Here</span></a>
                         </div>
                     </div>
@@ -1358,7 +1403,7 @@
 
                                 <div class="row g-3">
                                     <div class="col-12">
-                                        <div class="ib-form-heading">Tell us the basics</div>
+                                        <div class="ib-form-heading">Tell us about the issue</div>
                                     </div>
                                 </div>
 
@@ -1396,7 +1441,7 @@
                                             <option value="RV solar repair / troubleshooting">RV solar repair / troubleshooting</option>
                                             <option value="RV solar upgrade">RV solar upgrade</option>
                                             <option value="RV solar install">RV solar install</option>
-                                            <option value="Off-grid cabin solar">Off-grid cabin solar</option>
+                                            <option value="Off-grid solar repair">Off-grid solar repair</option>
                                             <option value="Not sure yet">Not sure yet</option>
                                         </select>
                                     </div>
@@ -1412,15 +1457,15 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="rig_details" class="form-label fw-600">RV or Property</label>
-                                        <input id="rig_details" name="rig_details" type="text" class="form-control" placeholder="Travel trailer, motorhome, cabin, van, etc.">
+                                        <input id="rig_details" name="rig_details" type="text" class="form-control" placeholder="RV, cabin, trailer, van">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="current_equipment" class="form-label fw-600">Current Equipment</label>
-                                        <input id="current_equipment" name="current_equipment" type="text" class="form-control" placeholder="Optional: batteries, inverter, solar brand, etc.">
+                                        <input id="current_equipment" name="current_equipment" type="text" class="form-control" placeholder="Optional">
                                     </div>
                                     <div class="col-12">
-                                        <label for="request_details" class="form-label fw-600">What is the system doing? <span class="ib-req">*</span></label>
-                                        <textarea id="request_details" name="request_details" class="form-control" placeholder="Example: Batteries are not charging, inverter keeps shutting off, or I want to switch to lithium and add more battery." required></textarea>
+                                        <label for="request_details" class="form-label fw-600">What needs repair? <span class="ib-req">*</span></label>
+                                        <textarea id="request_details" name="request_details" class="form-control" placeholder="What is not working?" required></textarea>
                                     </div>
                                 </div>
 
@@ -1486,7 +1531,7 @@
               <div class="col-lg-4 col-sm-6">
                 <img src="images/installedbyus-logo-light.png" class="logo-footer" alt="">
                 <div class="spacer-20"></div>
-                <p>We work on RV solar systems in the San Antonio area. Repairs and upgrades come first. We also take on some off-grid cabin and install work.</p>
+                <p>RV solar repair, off-grid solar repair, lithium upgrades, and inverter replacement in the San Antonio area.</p>
               </div>
 
               <div class="col-lg-5 col-sm-12 order-lg-1 order-sm-2">
@@ -1496,10 +1541,10 @@
                       <h5>Our Services</h5>
                       <ul class="ul-check">
                           <li>RV solar repair</li>
-                          <li>Battery and charging issues</li>
+                          <li>Off-grid solar repair</li>
                           <li>Lithium upgrades</li>
                           <li>Inverter replacement</li>
-                          <li>Off-grid cabin solar</li>
+                          <li>Battery and charging issues</li>
                       </ul>
                     </div>
                   </div>
@@ -1509,7 +1554,7 @@
                       <h5>Navigation</h5>
                       <ul>
                         <li><a href="#rv-solar">RV Repair &amp; Upgrades</a></li>
-                        <li><a href="#offgrid-cabin">Off-Grid Cabin Systems</a></li>
+                        <li><a href="#offgrid-cabin">Off-Grid Solar Repair</a></li>
                         <li><a href="#how-we-move-forward">How It Works</a></li>
                         <li><a href="#project-form">Contact</a></li>
                       </ul>
@@ -1584,7 +1629,7 @@
                 <li>Battery and charging issues</li>
                 <li>Lithium upgrades</li>
                 <li>Inverter replacement</li>
-                <li>Off-grid cabin solar</li>
+                <li>Off-grid solar repair</li>
             </ul>
 
             <div class="spacer-30-line"></div>
@@ -1599,7 +1644,7 @@
             <div class="spacer-30-line"></div>
 
             <h5>About Us</h5>
-            <p>We work on RV solar systems in the San Antonio area. Repairs and upgrades come first. We also take on some off-grid cabin and install work.</p>
+            <p>RV solar repair, off-grid solar repair, lithium upgrades, and inverter replacement in the San Antonio area.</p>
         </div>
     </div>
 
@@ -1622,6 +1667,9 @@
         var phoneLocal = document.getElementById('phone_local');
         var phoneHidden = document.getElementById('phone');
         var phoneError = document.getElementById('phone_error');
+        var heroCopy = document.querySelector('.ib-hero-copy');
+        var heroTitle = document.querySelector('.ib-hero-title');
+        var heroSummary = document.querySelector('.ib-hero-summary');
         var formStatus = document.getElementById('project_form_status');
         var submitBtn = document.getElementById('project-submit-btn');
         var recaptchaSiteKey = '6LdeXHEsAAAAAIjURsV3u9GzTuUrySBXkjxyllni';
@@ -1673,6 +1721,31 @@
               });
             });
           });
+        }
+
+        function syncHeroSummaryWidth() {
+          if (!heroCopy || !heroTitle || !heroSummary) return;
+          if (window.innerWidth < 992) {
+            heroCopy.style.width = '';
+            heroSummary.style.width = '';
+            heroSummary.style.maxWidth = '';
+            return;
+          }
+          var titleWidth = Math.ceil(heroTitle.getBoundingClientRect().width);
+          heroCopy.style.width = titleWidth + 'px';
+          heroSummary.style.width = '100%';
+          heroSummary.style.maxWidth = '100%';
+        }
+
+        syncHeroSummaryWidth();
+        window.addEventListener('load', syncHeroSummaryWidth);
+        window.addEventListener('resize', syncHeroSummaryWidth);
+        if (window.ResizeObserver && heroTitle) {
+          var heroTitleObserver = new ResizeObserver(syncHeroSummaryWidth);
+          heroTitleObserver.observe(heroTitle);
+        }
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(syncHeroSummaryWidth);
         }
 
         if (phoneLocal) {
